@@ -1,6 +1,6 @@
 ---
 index: 2
-path: "/stages/les-grangettes-le-vaud"
+slug: "les-grangettes-le-vaud"
 title: "Les Grangettes - Le Vaud"
 date: "2018-06-30"
 distance: 90

@@ -1,6 +1,6 @@
 ---
 index: 16
-path: "/stages/teutoburger-waldsee-bassum"
+slug: "teutoburger-waldsee-bassum"
 title: "Teutoburger Waldsee - Bassum"
 date: "2018-07-18"
 distance: 108

@@ -1,6 +1,6 @@
 ---
 index: 30
-path: "/stages/col-de-røldal-kvanndal"
+slug: "col-de-røldal-kvanndal"
 title: "Col de Røldal - Kvanndal"
 date: "2018-08-02"
 distance: 81

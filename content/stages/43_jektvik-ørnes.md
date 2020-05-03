@@ -1,6 +1,6 @@
 ---
 index: 43
-path: "/stages/jektvik-ørnes"
+slug: "jektvik-ørnes"
 title: "Jektvik - Ørnes"
 date: "2018-08-16"
 distance: 81

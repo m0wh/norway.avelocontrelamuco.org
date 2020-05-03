@@ -1,6 +1,6 @@
 ---
 index: 3
-path: "/stages/le-vaud-le-sentier"
+slug: "le-vaud-le-sentier"
 title: "Le Vaud - Le Sentier"
 date: "2018-07-01"
 distance: 40

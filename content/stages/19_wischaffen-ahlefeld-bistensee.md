@@ -1,6 +1,6 @@
 ---
 index: 19
-path: "/stages/wischaffen-ahlefeld-bistensee"
+slug: "wischaffen-ahlefeld-bistensee"
 title: "Wischaffen - Ahlefeld-Bistensee"
 date: "2018-07-21"
 distance: 102

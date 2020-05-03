@@ -1,6 +1,6 @@
 ---
 index: 17
-path: "/stages/bassum-worpswede"
+slug: "bassum-worpswede"
 title: "Bassum - Worpswede"
 date: "2018-07-19"
 distance: 70

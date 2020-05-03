@@ -1,6 +1,6 @@
 ---
 index: 26
-path: "/stages/kristiansand-byglandsfjord"
+slug: "kristiansand-byglandsfjord"
 title: "Kristiansand - Byglandsfjord"
 date: "2018-07-29"
 distance: 83

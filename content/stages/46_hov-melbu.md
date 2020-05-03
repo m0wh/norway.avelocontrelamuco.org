@@ -1,6 +1,6 @@
 ---
 index: 46
-path: "/stages/hov-melbu"
+slug: "hov-melbu"
 title: "Hov - Melbu"
 date: "2018-08-19"
 distance: 107

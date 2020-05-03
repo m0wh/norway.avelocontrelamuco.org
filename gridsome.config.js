@@ -24,7 +24,7 @@ module.exports = {
       options: {
         path: 'content/stages/**/*.md',
         typeName: 'Stage',
-        route: ':path'
+        route: '/stages/:slug'
       }
     },
     {

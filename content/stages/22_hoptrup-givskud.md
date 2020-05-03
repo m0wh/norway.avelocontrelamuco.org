@@ -1,6 +1,6 @@
 ---
 index: 22
-path: "/stages/hoptrup-givskud"
+slug: "hoptrup-givskud"
 title: "Hoptrup - Givskud"
 date: "2018-07-24"
 distance: 99

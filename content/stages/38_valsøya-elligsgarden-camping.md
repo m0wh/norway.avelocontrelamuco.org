@@ -1,6 +1,6 @@
 ---
 index: 38
-path: "/stages/valsøya-elligsgarden-camping"
+slug: "valsøya-elligsgarden-camping"
 title: "Valsøya - Elligsgarden camping"
 date: "2018-08-10"
 distance: 50

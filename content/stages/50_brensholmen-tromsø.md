@@ -1,6 +1,6 @@
 ---
 index: 50
-path: "/stages/brensholmen-tromsø"
+slug: "brensholmen-tromsø"
 title: "Brensholmen - Tromsø"
 date: "2018-08-23"
 distance: 65

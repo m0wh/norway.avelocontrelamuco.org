@@ -1,6 +1,6 @@
 ---
 index: 52
-path: "/stages/olderdalen-sørstraumen"
+slug: "olderdalen-sørstraumen"
 title: "Olderdalen - Sørstraumen"
 date: "2018-08-25"
 distance: 103

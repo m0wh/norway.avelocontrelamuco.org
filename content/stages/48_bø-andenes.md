@@ -1,6 +1,6 @@
 ---
 index: 48
-path: "/stages/bø-andenes"
+slug: "bø-andenes"
 title: "Bø - Andenes"
 date: "2018-08-21"
 distance: 49

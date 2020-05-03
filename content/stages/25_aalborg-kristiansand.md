@@ -1,6 +1,6 @@
 ---
 index: 25
-path: "/stages/aalborg-kristiansand"
+slug: "aalborg-kristiansand"
 title: "Aalborg - Kristiansand"
 date: "2018-07-28"
 distance: 20

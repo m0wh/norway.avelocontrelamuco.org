@@ -1,6 +1,6 @@
 ---
 index: 11
-path: "/stages/neugartenhof-worms"
+slug: "neugartenhof-worms"
 title: "Neugartenhof - Worms"
 date: "2018-07-12"
 distance: 145

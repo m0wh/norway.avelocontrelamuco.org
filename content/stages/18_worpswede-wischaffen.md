@@ -1,6 +1,6 @@
 ---
 index: 18
-path: "/stages/worpswede-wischaffen"
+slug: "worpswede-wischaffen"
 title: "Worpswede - Wischaffen"
 date: "2018-07-20"
 distance: 96

@@ -1,6 +1,6 @@
 ---
 index: 13
-path: "/stages/oberwesel-cologne"
+slug: "oberwesel-cologne"
 title: "Oberwesel - Cologne"
 date: "2018-07-14"
 distance: 140

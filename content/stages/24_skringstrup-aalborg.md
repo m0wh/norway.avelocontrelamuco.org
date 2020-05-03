@@ -1,6 +1,6 @@
 ---
 index: 24
-path: "/stages/skringstrup-aalborg"
+slug: "skringstrup-aalborg"
 title: "Skringstrup - Aalborg"
 date: "2018-07-26"
 distance: 84

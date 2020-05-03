@@ -1,6 +1,6 @@
 ---
 index: 39
-path: "/stages/elligsgarden-camping-trondheim"
+slug: "elligsgarden-camping-trondheim"
 title: "Elligsgarden camping - Trondheim"
 date: "2018-08-11"
 distance: 80

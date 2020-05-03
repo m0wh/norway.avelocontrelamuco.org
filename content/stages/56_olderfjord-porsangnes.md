@@ -1,6 +1,6 @@
 ---
 index: 56
-path: "/stages/olderfjord-porsangnes"
+slug: "olderfjord-porsangnes"
 title: "Olderfjord - Porsangnes"
 date: "2018-08-29"
 distance: 67

@@ -1,6 +1,6 @@
 ---
 index: 47
-path: "/stages/melbu-bø"
+slug: "melbu-bø"
 title: "Melbu - Bø"
 date: "2018-08-20"
 distance: 121

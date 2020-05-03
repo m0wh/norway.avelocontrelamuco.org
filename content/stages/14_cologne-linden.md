@@ -1,6 +1,6 @@
 ---
 index: 14
-path: "/stages/cologne-linden"
+slug: "cologne-linden"
 title: "Cologne - Linden"
 date: "2018-07-16"
 distance: 106

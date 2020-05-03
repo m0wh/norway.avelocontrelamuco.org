@@ -1,6 +1,6 @@
 ---
 index: 28
-path: "/stages/valle-haukeligrend"
+slug: "valle-haukeligrend"
 title: "Valle - Haukeligrend"
 date: "2018-07-31"
 distance: 86

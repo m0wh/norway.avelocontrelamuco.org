@@ -1,6 +1,6 @@
 ---
 index: 55
-path: "/stages/aisaroaivve-olderfjord"
+slug: "aisaroaivve-olderfjord"
 title: "Aisaroaivve - Olderfjord"
 date: "2018-08-28"
 distance: 50

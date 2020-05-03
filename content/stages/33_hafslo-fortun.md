@@ -1,6 +1,6 @@
 ---
 index: 33
-path: "/stages/hafslo-fortun"
+slug: "hafslo-fortun"
 title: "Hafslo - Fortun"
 date: "2018-08-05"
 distance: 55

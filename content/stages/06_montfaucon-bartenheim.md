@@ -1,6 +1,6 @@
 ---
 index: 6
-path: "/stages/montfaucon-bartenheim"
+slug: "montfaucon-bartenheim"
 title: "Montfaucon - Bartenheim"
 date: "2018-07-04"
 distance: 116

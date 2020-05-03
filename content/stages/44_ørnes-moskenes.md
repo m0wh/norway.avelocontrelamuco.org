@@ -1,6 +1,6 @@
 ---
 index: 44
-path: "/stages/ørnes-moskenes"
+slug: "ørnes-moskenes"
 title: "Ørnes - Moskenes"
 date: "2018-08-17"
 distance: 2

@@ -1,6 +1,6 @@
 ---
 index: 34
-path: "/stages/fortun-bismo"
+slug: "fortun-bismo"
 title: "Fortun - Bismo"
 date: "2018-08-06"
 distance: 84

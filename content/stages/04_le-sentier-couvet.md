@@ -1,6 +1,6 @@
 ---
 index: 4
-path: "/stages/le-sentier-couvet"
+slug: "le-sentier-couvet"
 title: "Le sentier - Couvet"
 date: "2018-07-02"
 distance: 82

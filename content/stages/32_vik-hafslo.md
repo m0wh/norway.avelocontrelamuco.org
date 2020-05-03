@@ -1,6 +1,6 @@
 ---
 index: 32
-path: "/stages/vik-hafslo"
+slug: "vik-hafslo"
 title: "Vik - Hafslo"
 date: "2018-08-04"
 distance: 71

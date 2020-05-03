@@ -1,6 +1,6 @@
 ---
 index: 57
-path: "/stages/porsangnes-nordkapp"
+slug: "porsangnes-nordkapp"
 title: "Porsangnes - Nordkapp"
 date: "2018-08-30"
 distance: 68

@@ -1,6 +1,6 @@
 ---
 index: 7
-path: "/stages/bartenheim-soulzmatt"
+slug: "bartenheim-soulzmatt"
 title: "Bartenheim - Soulzmatt"
 date: "2018-07-05"
 distance: 101

@@ -1,6 +1,6 @@
 ---
 index: 41
-path: "/stages/rorvik-brønnøysund"
+slug: "rorvik-brønnøysund"
 title: "Rorvik - Brønnøysund"
 date: "2018-08-14"
 distance: 161

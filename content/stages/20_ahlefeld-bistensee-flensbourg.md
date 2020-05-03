@@ -1,6 +1,6 @@
 ---
 index: 20
-path: "/stages/ahlefeld-bistensee-flensbourg"
+slug: "ahlefeld-bistensee-flensbourg"
 title: "Ahlefeld-Bistensee - Flensbourg"
 date: "2018-07-22"
 distance: 62

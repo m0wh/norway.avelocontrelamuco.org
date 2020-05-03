@@ -1,6 +1,6 @@
 ---
 index: 37
-path: "/stages/batnfjordsøra-valsøya"
+slug: "batnfjordsøra-valsøya"
 title: "Batnfjordsøra - Valsøya"
 date: "2018-08-09"
 distance: 63

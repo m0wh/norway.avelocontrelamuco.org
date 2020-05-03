@@ -1,6 +1,6 @@
 ---
 index: 8
-path: "/stages/soulzmatt-obernai"
+slug: "soulzmatt-obernai"
 title: "Soulzmatt - Obernai"
 date: "2018-07-06"
 distance: 103

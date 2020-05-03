@@ -17,7 +17,7 @@ interface Place {
 interface Stage {
   id: string,
   index: number,
-  path: string,
+  slug: string,
   title: string,
   date: string,
   distance: number,

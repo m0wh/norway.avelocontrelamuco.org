@@ -1,6 +1,6 @@
 ---
 index: 49
-path: "/stages/andenes-brensholmen"
+slug: "andenes-brensholmen"
 title: "Andenes - Brensholmen"
 date: "2018-08-22"
 distance: 89

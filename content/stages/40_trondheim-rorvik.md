@@ -1,6 +1,6 @@
 ---
 index: 40
-path: "/stages/trondheim-rorvik"
+slug: "trondheim-rorvik"
 title: "Trondheim - Rorvik"
 date: "2018-08-13"
 distance: 10

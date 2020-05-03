@@ -25,7 +25,7 @@
       id
       index
       title
-      path
+      slug
       from {
         name
         countryISO

@@ -1,6 +1,6 @@
 ---
 index: 27
-path: "/stages/byglandsfjord-valle"
+slug: "byglandsfjord-valle"
 title: "Byglandsfjord - Valle"
 date: "2018-07-30"
 distance: 101

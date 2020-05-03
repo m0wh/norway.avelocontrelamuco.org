@@ -1,6 +1,6 @@
 ---
 index: 21
-path: "/stages/flensbourg-hoptrup"
+slug: "flensbourg-hoptrup"
 title: "Flensbourg - Hoptrup"
 date: "2018-07-23"
 distance: 103

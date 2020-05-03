@@ -1,6 +1,6 @@
 ---
 index: 10
-path: "/stages/strasbourg-neugartenhof"
+slug: "strasbourg-neugartenhof"
 title: "Strasbourg - Neugartenhof"
 date: "2018-07-11"
 distance: 81

@@ -1,6 +1,6 @@
 ---
 index: 53
-path: "/stages/sørstraumen-isnestoften"
+slug: "sørstraumen-isnestoften"
 title: "Sørstraumen - Isnestoften"
 date: "2018-08-26"
 distance: 78

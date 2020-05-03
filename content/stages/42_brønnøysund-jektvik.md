@@ -1,6 +1,6 @@
 ---
 index: 42
-path: "/stages/brønnøysund-jektvik"
+slug: "brønnøysund-jektvik"
 title: "Brønnøysund - Jektvik"
 date: "2018-08-15"
 distance: 96

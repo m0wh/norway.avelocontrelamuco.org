@@ -1,6 +1,6 @@
 ---
 index: 45
-path: "/stages/moskenes-hov"
+slug: "moskenes-hov"
 title: "Moskenes - Hov"
 date: "2018-08-18"
 distance: 122

@@ -1,6 +1,6 @@
 ---
 index: 5
-path: "/stages/couvet-montfaucon"
+slug: "couvet-montfaucon"
 title: "Couvet - Montfaucon"
 date: "2018-07-03"
 distance: 94

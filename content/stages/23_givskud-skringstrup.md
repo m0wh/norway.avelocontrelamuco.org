@@ -1,6 +1,6 @@
 ---
 index: 23
-path: "/stages/givskud-skringstrup"
+slug: "givskud-skringstrup"
 title: "Givskud - Skringstrup"
 date: "2018-07-25"
 distance: 115

@@ -1,6 +1,6 @@
 ---
 index: 1
-path: "/stages/chamonix-les-grangettes"
+slug: "chamonix-les-grangettes"
 title: "Chamonix - Les Grangettes"
 date: "2018-06-29"
 distance: 90

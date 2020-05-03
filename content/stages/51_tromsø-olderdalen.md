@@ -1,6 +1,6 @@
 ---
 index: 51
-path: "/stages/tromsø-olderdalen"
+slug: "tromsø-olderdalen"
 title: "Tromsø - Olderdalen"
 date: "2018-08-24"
 distance: 94

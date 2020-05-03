@@ -1,6 +1,6 @@
 ---
 index: 29
-path: "/stages/haukeligrend-col-de-røldal"
+slug: "haukeligrend-col-de-røldal"
 title: "Haukeligrend - Col de Røldal"
 date: "2018-08-01"
 distance: 80

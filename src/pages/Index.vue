@@ -35,9 +35,10 @@ query {
     edges {
       node {
         id
+        path
         index
         title
-        path
+        slug
         from {
           name
           countryISO

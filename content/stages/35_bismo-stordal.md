@@ -1,6 +1,6 @@
 ---
 index: 35
-path: "/stages/bismo-stordal"
+slug: "bismo-stordal"
 title: "Bismo - Stordal"
 date: "2018-08-07"
 distance: 85

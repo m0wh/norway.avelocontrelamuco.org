@@ -1,6 +1,6 @@
 ---
 index: 36
-path: "/stages/stordal-batnfjordsøra"
+slug: "stordal-batnfjordsøra"
 title: "Stordal - Batnfjordsøra"
 date: "2018-08-08"
 distance: 87

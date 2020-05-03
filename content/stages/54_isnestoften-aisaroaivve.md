@@ -1,6 +1,6 @@
 ---
 index: 54
-path: "/stages/isnestoften-aisaroaivve"
+slug: "isnestoften-aisaroaivve"
 title: "Isnestoften - Aisaroaivve"
 date: "2018-08-27"
 distance: 113

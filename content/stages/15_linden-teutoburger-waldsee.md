@@ -1,6 +1,6 @@
 ---
 index: 15
-path: "/stages/linden-teutoburger-waldsee"
+slug: "linden-teutoburger-waldsee"
 title: "Linden - Teutoburger Waldsee"
 date: "2018-07-17"
 distance: 78

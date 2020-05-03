@@ -1,6 +1,6 @@
 ---
 index: 31
-path: "/stages/kvanndal-vik"
+slug: "kvanndal-vik"
 title: "Kvanndal - Vik"
 date: "2018-08-03"
 distance: 83

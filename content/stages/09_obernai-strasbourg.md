@@ -1,6 +1,6 @@
 ---
 index: 9
-path: "/stages/obernai-strasbourg"
+slug: "obernai-strasbourg"
 title: "Obernai - Strasbourg"
 date: "2018-07-08"
 distance: 52

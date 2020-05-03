@@ -1,6 +1,6 @@
 ---
 index: 12
-path: "/stages/worms-oberwesel"
+slug: "worms-oberwesel"
 title: "Worms - Oberwesel"
 date: "2018-07-13"
 distance: 117
