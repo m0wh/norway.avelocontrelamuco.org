@@ -1,6 +1,7 @@
 ---
 index: 48
 slug: "bø-andenes"
+section: 4
 title: "Bø - Andenes"
 date: "2018-08-21"
 distance: 49

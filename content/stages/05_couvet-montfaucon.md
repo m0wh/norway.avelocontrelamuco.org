@@ -1,6 +1,7 @@
 ---
 index: 5
 slug: "couvet-montfaucon"
+section: 0
 title: "Couvet - Montfaucon"
 date: "2018-07-03"
 distance: 94

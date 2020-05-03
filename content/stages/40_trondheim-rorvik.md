@@ -1,6 +1,7 @@
 ---
 index: 40
 slug: "trondheim-rorvik"
+section: 3
 title: "Trondheim - Rorvik"
 date: "2018-08-13"
 distance: 10

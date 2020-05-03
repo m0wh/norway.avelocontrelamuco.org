@@ -1,6 +1,7 @@
 ---
 index: 47
 slug: "melbu-bø"
+section: 4
 title: "Melbu - Bø"
 date: "2018-08-20"
 distance: 121

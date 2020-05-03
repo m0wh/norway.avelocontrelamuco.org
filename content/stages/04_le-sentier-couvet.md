@@ -1,6 +1,7 @@
 ---
 index: 4
 slug: "le-sentier-couvet"
+section: 0
 title: "Le sentier - Couvet"
 date: "2018-07-02"
 distance: 82

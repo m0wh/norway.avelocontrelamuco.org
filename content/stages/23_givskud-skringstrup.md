@@ -1,6 +1,7 @@
 ---
 index: 23
 slug: "givskud-skringstrup"
+section: 1
 title: "Givskud - Skringstrup"
 date: "2018-07-25"
 distance: 115

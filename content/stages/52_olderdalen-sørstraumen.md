@@ -1,6 +1,7 @@
 ---
 index: 52
 slug: "olderdalen-sørstraumen"
+section: 5
 title: "Olderdalen - Sørstraumen"
 date: "2018-08-25"
 distance: 103

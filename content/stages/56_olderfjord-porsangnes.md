@@ -1,6 +1,7 @@
 ---
 index: 56
 slug: "olderfjord-porsangnes"
+section: 5
 title: "Olderfjord - Porsangnes"
 date: "2018-08-29"
 distance: 67

@@ -1,6 +1,7 @@
 ---
 index: 25
 slug: "aalborg-kristiansand"
+section: 1
 title: "Aalborg - Kristiansand"
 date: "2018-07-28"
 distance: 20

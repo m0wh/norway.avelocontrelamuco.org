@@ -1,6 +1,7 @@
 ---
 index: 20
 slug: "ahlefeld-bistensee-flensbourg"
+section: 1
 title: "Ahlefeld-Bistensee - Flensbourg"
 date: "2018-07-22"
 distance: 62

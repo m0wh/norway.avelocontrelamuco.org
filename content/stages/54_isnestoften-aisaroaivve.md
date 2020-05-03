@@ -1,6 +1,7 @@
 ---
 index: 54
 slug: "isnestoften-aisaroaivve"
+section: 5
 title: "Isnestoften - Aisaroaivve"
 date: "2018-08-27"
 distance: 113

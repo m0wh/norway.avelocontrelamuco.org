@@ -1,6 +1,7 @@
 ---
 index: 43
 slug: "jektvik-ørnes"
+section: 3
 title: "Jektvik - Ørnes"
 date: "2018-08-16"
 distance: 81

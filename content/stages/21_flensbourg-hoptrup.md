@@ -1,6 +1,7 @@
 ---
 index: 21
 slug: "flensbourg-hoptrup"
+section: 1
 title: "Flensbourg - Hoptrup"
 date: "2018-07-23"
 distance: 103

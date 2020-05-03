@@ -1,6 +1,7 @@
 ---
 index: 34
 slug: "fortun-bismo"
+section: 2
 title: "Fortun - Bismo"
 date: "2018-08-06"
 distance: 84

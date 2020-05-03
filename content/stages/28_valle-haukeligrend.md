@@ -1,6 +1,7 @@
 ---
 index: 28
 slug: "valle-haukeligrend"
+section: 2
 title: "Valle - Haukeligrend"
 date: "2018-07-31"
 distance: 86

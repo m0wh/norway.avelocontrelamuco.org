@@ -1,0 +1,69 @@
+
+$margins: 1rem;
+$gap: .2rem;
+$columns: 4fr 3fr 4fr 3fr 4fr 4fr;
+
+@function x($i) {
+  @return calc(#{$i} * ((100vw - #{$margins * 2}) / 22));
+}
+
+@function y($i) {
+  @return calc(#{$i} * 20rem / 16);
+}
+
+@mixin md {
+  @media (min-width: 660px) { @content; }
+}
+
+@mixin lg {
+  @media (min-width: 770px) { @content; }
+}
+
+@mixin xl {
+  @media (min-width: 1024px) { @content; }
+}
+
+.container {
+  position: relative;
+  margin-left: $margins;
+  margin-right: $margins;
+  display: grid;
+  grid-template-columns: $columns;
+  column-gap: $gap;
+}
+
+[class*="col-"] {
+  @for $a from 1 through length($columns) {
+    &.col-#{$a} { grid-column: $a; }
+    @for $b from 1 through length($columns) {
+      &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
+    }
+  }
+
+  @include md {
+    @for $a from 1 through length($columns) {
+      &.col-md-#{$a} { grid-column: $a; }
+      @for $b from 1 through length($columns) {
+        &.col-md-#{$a}-#{$b} { grid-column: $a / span $b; }
+      }
+    }
+  }
+
+  @include lg {
+    @for $a from 1 through length($columns) {
+      &.col-lg-#{$a} { grid-column: $a; }
+      @for $b from 1 through length($columns) {
+        &.col-lg-#{$a}-#{$b} { grid-column: $a / span $b; }
+      }
+    }
+  }
+
+  @include xl {
+    @for $a from 1 through length($columns) {
+      &.col-xl-#{$a} { grid-column: $a; }
+      @for $b from 1 through length($columns) {
+        &.col-xl-#{$a}-#{$b} { grid-column: $a / span $b; }
+      }
+    }
+  }
+}

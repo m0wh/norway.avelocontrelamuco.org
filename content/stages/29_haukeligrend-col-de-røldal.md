@@ -1,6 +1,7 @@
 ---
 index: 29
 slug: "haukeligrend-col-de-røldal"
+section: 2
 title: "Haukeligrend - Col de Røldal"
 date: "2018-08-01"
 distance: 80

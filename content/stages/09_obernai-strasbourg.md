@@ -1,6 +1,7 @@
 ---
 index: 9
 slug: "obernai-strasbourg"
+section: 0
 title: "Obernai - Strasbourg"
 date: "2018-07-08"
 distance: 52

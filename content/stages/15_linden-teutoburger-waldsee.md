@@ -1,6 +1,7 @@
 ---
 index: 15
 slug: "linden-teutoburger-waldsee"
+section: 1
 title: "Linden - Teutoburger Waldsee"
 date: "2018-07-17"
 distance: 78

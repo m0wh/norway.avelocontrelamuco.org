@@ -1,6 +1,7 @@
 ---
 index: 18
 slug: "worpswede-wischaffen"
+section: 1
 title: "Worpswede - Wischaffen"
 date: "2018-07-20"
 distance: 96

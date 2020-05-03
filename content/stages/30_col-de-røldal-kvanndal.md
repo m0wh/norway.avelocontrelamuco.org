@@ -1,6 +1,7 @@
 ---
 index: 30
 slug: "col-de-røldal-kvanndal"
+section: 2
 title: "Col de Røldal - Kvanndal"
 date: "2018-08-02"
 distance: 81

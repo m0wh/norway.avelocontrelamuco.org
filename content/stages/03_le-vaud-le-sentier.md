@@ -1,6 +1,7 @@
 ---
 index: 3
 slug: "le-vaud-le-sentier"
+section: 0
 title: "Le Vaud - Le Sentier"
 date: "2018-07-01"
 distance: 40

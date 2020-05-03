@@ -1,6 +1,7 @@
 ---
 index: 11
 slug: "neugartenhof-worms"
+section: 1
 title: "Neugartenhof - Worms"
 date: "2018-07-12"
 distance: 145

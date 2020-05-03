@@ -1,6 +1,7 @@
 ---
 index: 49
 slug: "andenes-brensholmen"
+section: 4
 title: "Andenes - Brensholmen"
 date: "2018-08-22"
 distance: 89

@@ -1,6 +1,7 @@
 ---
 index: 6
 slug: "montfaucon-bartenheim"
+section: 0
 title: "Montfaucon - Bartenheim"
 date: "2018-07-04"
 distance: 116

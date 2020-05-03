@@ -1,6 +1,7 @@
 ---
 index: 31
 slug: "kvanndal-vik"
+section: 2
 title: "Kvanndal - Vik"
 date: "2018-08-03"
 distance: 83

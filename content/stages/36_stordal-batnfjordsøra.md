@@ -1,6 +1,7 @@
 ---
 index: 36
 slug: "stordal-batnfjordsøra"
+section: 2
 title: "Stordal - Batnfjordsøra"
 date: "2018-08-08"
 distance: 87

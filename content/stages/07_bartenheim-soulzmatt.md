@@ -1,6 +1,7 @@
 ---
 index: 7
 slug: "bartenheim-soulzmatt"
+section: 0
 title: "Bartenheim - Soulzmatt"
 date: "2018-07-05"
 distance: 101

@@ -1,61 +1,63 @@
 <template>
   <header class="container">
-    <component :is="$route.path === '/' ? 'h1' : 'p'" class="title">
-      <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-    </component>
-
-    <a class="fb" href="https://facebook.com/avclm">Facebook</a>
+      <div class="heart col-1">
+        <g-link to="/">♥</g-link>
+      </div>
+      <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-4">
+        <g-link to="/">avclm<sup>NOR</sup></g-link>
+      </component>
+      <nav class="col-6 main-nav">
+        <g-link to="/stages">Étapes</g-link>
+        <g-link to="/gallery">Gallerie</g-link>
+      </nav>
   </header>
 </template>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 
 @Component({})
-export default class Header extends Vue {
-  mounted (): void {
-    console.log('Header mounted')
-  }
-}
+export default class Header extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/scss/main.scss';
+@import '../assets/scss/main.scss';
 
-  header {
-    padding-top: $gutter;
-    padding-bottom: $gutter;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
+header {
+  margin-top: y(1);
+  margin-bottom: y(2);
+
+  .heart {
+    font-size: y(1);
+
+    a { text-decoration: none; }
+  }
+
+  .logo {
+    align-self: center;
+    margin: 0;
+    font-size: y(1);
+
+    a { text-decoration: none; }
+
+    @include xl {
+      font-size: y(1);
+    }
+  }
+
+  .main-nav {
+    justify-self: right;
+    align-self: center;
+
+    @include xl {
+      font-size: y(1);
+    }
 
     a {
       text-decoration: none;
-      color: currentColor;
-    }
-
-    .title {
-      font-size: R(16);
-      margin: 0;
-      grid-column: 1 / span 2;
-      font-weight: normal;
-    }
-
-    .fb {
-      font-size: R(16);
-      margin: 0;
-      text-align: right;
-      grid-column: 9;
+      text-transform: lowercase;
+      margin-left: y(1);
     }
   }
+}
 </style>

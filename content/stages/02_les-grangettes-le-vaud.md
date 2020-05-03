@@ -1,6 +1,7 @@
 ---
 index: 2
 slug: "les-grangettes-le-vaud"
+section: 0
 title: "Les Grangettes - Le Vaud"
 date: "2018-06-30"
 distance: 90

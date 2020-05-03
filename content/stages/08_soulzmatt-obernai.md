@@ -1,6 +1,7 @@
 ---
 index: 8
 slug: "soulzmatt-obernai"
+section: 0
 title: "Soulzmatt - Obernai"
 date: "2018-07-06"
 distance: 103

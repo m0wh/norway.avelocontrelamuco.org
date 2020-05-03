@@ -1,6 +1,7 @@
 ---
 index: 37
 slug: "batnfjordsøra-valsøya"
+section: 3
 title: "Batnfjordsøra - Valsøya"
 date: "2018-08-09"
 distance: 63

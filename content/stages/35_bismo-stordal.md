@@ -1,6 +1,7 @@
 ---
 index: 35
 slug: "bismo-stordal"
+section: 2
 title: "Bismo - Stordal"
 date: "2018-08-07"
 distance: 85

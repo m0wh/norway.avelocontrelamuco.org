@@ -1,6 +1,7 @@
 ---
 index: 45
 slug: "moskenes-hov"
+section: 4
 title: "Moskenes - Hov"
 date: "2018-08-18"
 distance: 122

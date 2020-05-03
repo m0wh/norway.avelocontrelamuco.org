@@ -1,6 +1,7 @@
 ---
 index: 19
 slug: "wischaffen-ahlefeld-bistensee"
+section: 1
 title: "Wischaffen - Ahlefeld-Bistensee"
 date: "2018-07-21"
 distance: 102

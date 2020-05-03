@@ -1,6 +1,7 @@
 ---
 index: 24
 slug: "skringstrup-aalborg"
+section: 1
 title: "Skringstrup - Aalborg"
 date: "2018-07-26"
 distance: 84

@@ -1,6 +1,7 @@
 ---
 index: 53
 slug: "sørstraumen-isnestoften"
+section: 5
 title: "Sørstraumen - Isnestoften"
 date: "2018-08-26"
 distance: 78

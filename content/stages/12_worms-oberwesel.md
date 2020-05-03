@@ -1,6 +1,7 @@
 ---
 index: 12
 slug: "worms-oberwesel"
+section: 1
 title: "Worms - Oberwesel"
 date: "2018-07-13"
 distance: 117

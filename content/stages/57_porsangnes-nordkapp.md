@@ -1,6 +1,7 @@
 ---
 index: 57
 slug: "porsangnes-nordkapp"
+section: 5
 title: "Porsangnes - Nordkapp"
 date: "2018-08-30"
 distance: 68

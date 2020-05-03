@@ -1,6 +1,7 @@
 ---
 index: 27
 slug: "byglandsfjord-valle"
+section: 2
 title: "Byglandsfjord - Valle"
 date: "2018-07-30"
 distance: 101

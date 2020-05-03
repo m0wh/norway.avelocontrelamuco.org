@@ -1,6 +1,7 @@
 ---
 index: 51
 slug: "tromsø-olderdalen"
+section: 5
 title: "Tromsø - Olderdalen"
 date: "2018-08-24"
 distance: 94

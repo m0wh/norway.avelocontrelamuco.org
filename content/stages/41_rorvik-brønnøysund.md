@@ -1,6 +1,7 @@
 ---
 index: 41
 slug: "rorvik-brønnøysund"
+section: 3
 title: "Rorvik - Brønnøysund"
 date: "2018-08-14"
 distance: 161

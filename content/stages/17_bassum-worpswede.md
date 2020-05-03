@@ -1,6 +1,7 @@
 ---
 index: 17
 slug: "bassum-worpswede"
+section: 1
 title: "Bassum - Worpswede"
 date: "2018-07-19"
 distance: 70

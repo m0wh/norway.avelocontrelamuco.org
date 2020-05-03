@@ -1,6 +1,7 @@
 ---
 index: 50
 slug: "brensholmen-tromsø"
+section: 5
 title: "Brensholmen - Tromsø"
 date: "2018-08-23"
 distance: 65

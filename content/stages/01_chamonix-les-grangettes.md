@@ -1,6 +1,7 @@
 ---
 index: 1
 slug: "chamonix-les-grangettes"
+section: 0
 title: "Chamonix - Les Grangettes"
 date: "2018-06-29"
 distance: 90

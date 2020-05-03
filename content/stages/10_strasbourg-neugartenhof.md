@@ -1,6 +1,7 @@
 ---
 index: 10
 slug: "strasbourg-neugartenhof"
+section: 0
 title: "Strasbourg - Neugartenhof"
 date: "2018-07-11"
 distance: 81

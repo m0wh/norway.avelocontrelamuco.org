@@ -1,6 +1,7 @@
 ---
 index: 42
 slug: "brønnøysund-jektvik"
+section: 3
 title: "Brønnøysund - Jektvik"
 date: "2018-08-15"
 distance: 96

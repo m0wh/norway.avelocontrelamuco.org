@@ -1,6 +1,7 @@
 ---
 index: 26
 slug: "kristiansand-byglandsfjord"
+section: 2
 title: "Kristiansand - Byglandsfjord"
 date: "2018-07-29"
 distance: 83

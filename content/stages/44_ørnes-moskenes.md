@@ -1,6 +1,7 @@
 ---
 index: 44
 slug: "ørnes-moskenes"
+section: 3
 title: "Ørnes - Moskenes"
 date: "2018-08-17"
 distance: 2

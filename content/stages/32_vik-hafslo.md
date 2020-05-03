@@ -1,6 +1,7 @@
 ---
 index: 32
 slug: "vik-hafslo"
+section: 2
 title: "Vik - Hafslo"
 date: "2018-08-04"
 distance: 71

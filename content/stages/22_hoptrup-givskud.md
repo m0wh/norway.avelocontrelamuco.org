@@ -1,6 +1,7 @@
 ---
 index: 22
 slug: "hoptrup-givskud"
+section: 1
 title: "Hoptrup - Givskud"
 date: "2018-07-24"
 distance: 99

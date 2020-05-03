@@ -1,6 +1,7 @@
 ---
 index: 16
 slug: "teutoburger-waldsee-bassum"
+section: 1
 title: "Teutoburger Waldsee - Bassum"
 date: "2018-07-18"
 distance: 108

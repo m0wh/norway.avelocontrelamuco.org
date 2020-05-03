@@ -1,6 +1,7 @@
 ---
 index: 39
 slug: "elligsgarden-camping-trondheim"
+section: 3
 title: "Elligsgarden camping - Trondheim"
 date: "2018-08-11"
 distance: 80

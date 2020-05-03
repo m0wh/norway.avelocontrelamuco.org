@@ -1,6 +1,7 @@
 ---
 index: 38
 slug: "valsøya-elligsgarden-camping"
+section: 3
 title: "Valsøya - Elligsgarden camping"
 date: "2018-08-10"
 distance: 50

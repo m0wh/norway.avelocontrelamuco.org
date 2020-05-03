@@ -1,6 +1,7 @@
 ---
 index: 55
 slug: "aisaroaivve-olderfjord"
+section: 5
 title: "Aisaroaivve - Olderfjord"
 date: "2018-08-28"
 distance: 50

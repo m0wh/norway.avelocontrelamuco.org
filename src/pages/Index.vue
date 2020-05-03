@@ -1,114 +1,184 @@
 <template>
   <Layout>
-    <main class="index container">
-      <h1 class="title">
-        De l'Aiguille de Midi au Soleil de Minuit
-      </h1>
+    <main>
+      <picture class="page-cover container"><img class="col-1-6" src="/images/knivsjelodden.jpg" alt="Knivsjelodden"></picture>
 
-      <p class="info">
-        Projet sportif été 2018
-      </p>
+      <section id="about">
+        <h2 style="display:none">About</h2>
 
-      <p class="about">
-        Après avoir passé un moment dans le hall du Cap Nord, profitant du WiFi, de l'électricité et de l'abri du vent, je me décide à sortir planter ma tente. Avant de mettre le nez dehors, une famille Allemande.
-      </p>
+        <section class="container">
+          <p class="col-1-6 col-xl-4-3">A Vélo contre la Muco est une association qui organise des voyages caritatifs à vélo en faveur de la recherche contre la mucoviscidose.</p>
+          <p class="col-1-6 col-xl-4-3">En été 2018, Théotime Massot et Malo Widerspach ont entrepris un voyage mémorable : de l'Aiguille du Midi au Soleil de Minuit.</p>
+        </section>
 
-      <ul class="stages">
-        <li v-for="edge in $page.allStage.edges" :key="edge.node.id" class="stage">
-          <LinkTitle
-            :index="edge.node.index"
-            :title="edge.node.title"
-            :from="edge.node.from"
-            :to="edge.node.to"
-            :date="edge.node.date"
-            :url="edge.node.path"
-          />
-        </li>
-      </ul>
+        <section class="container">
+          <p class="trip col-1-6 col-xl-1-4">Chamonix<sup>FRA</sup>→Nordkapp<sup>NOR</sup></p>
+          <img class="about col-1-6 col-xl-1-4" src="/images/phare.jpg">
+          <p class="col-1-6 col-xl-6">Ce site est la trace et le journal de ce voyage.</p>
+          <a class="col-1-6 col-xl-6" href="#">Démarrer→</a>
+        </section>
+      </section>
+
+      <section class="container" id="stages">
+        <h2 class="col-1-6 col-xl-1">Étapes</h2>
+
+        <ol class="col-1-6 col-xl-2-5">
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 0)[0].node.path">France/Suisse</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 0).length }})</span>
+          </li>
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 1)[0].node.path">Allemagne/Danemark</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 1).length }})</span>
+          </li>
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 2)[0].node.path">Monts Norvégiens</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 2).length }})</span>
+          </li>
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 3)[0].node.path">Côtes Norvégiennes</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 3).length }})</span>
+          </li>
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 4)[0].node.path">Îles Lofoten</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 4).length }})</span>
+          </li>
+          <li class="category">
+            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 5)[0].node.path">Norvège du Nord</g-link>
+            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 5).length }})</span>
+          </li>
+        </ol>
+      </section>
     </main>
   </Layout>
 </template>
 
 <page-query>
 query {
-  allStage(sortBy: "date", order: ASC) {
+  allStage(order: ASC) {
     edges {
       node {
-        id
+        section
         path
-        index
-        title
-        slug
-        from {
-          name
-          countryISO
-          latTxt
-        }
-        to {
-          latTxt
-          name
-          countryISO
-        }
-        date (format: "DD.MM.YYYY")
       }
     }
   }
 }
 </page-query>
 
-
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
-import LinkTitle from '@/components/LinkTitle.vue'
 
-@Component({
-  components: { LinkTitle }
-})
-export default class IndexPage extends Vue {
-  metaInfo = {
-    title: 'Hello, world!'
-  }
-}
+@Component({})
+export default class IndexPage extends Vue {}
 </script>
 
 <style lang="scss" scoped>
-  @import '../assets/scss/main.scss';
+@import '../assets/scss/main.scss';
 
-  .index {
-    margin-top: R(300);
+body {
+  font-size: y(1);
+  line-height: y(1);
+}
 
-    .title {
-      grid-row: 1;
-      grid-column: 3 / span 6;
-      font-size: R(130);
-      margin-top: R(48);
-      margin-bottom: R(85);
+main {
+  .page-cover {
+    height: y(23);
+
+    @include xl {
+      height: y(56);
     }
 
-    .info {
-      grid-row: 1;
-      grid-column: 8;
-      text-align: right;
-      font-size: R(10);
-      max-width: R(75);
-      justify-self: right;
-      margin: 0;
-    }
-
-    .about {
-      grid-row: 2;
-      grid-column: 3 / span 6;
-      font-size: R(36);
-      line-height: R(50);
-      margin: 0;
-    }
-
-    .stages {
-      grid-row: 3;
-      grid-column: 3 / span 6;
-      margin: R(200) 0;
-      padding: 0;
-      list-style: none;
+    img {
+      height: 100%;
+      width: 100%;
     }
   }
+
+  section {
+    margin: y(2) 0;
+
+    > p, img {
+      margin: 0 0 y(1) 0;
+
+      &.trip {
+        @include xl {
+          font-size: y(2);
+          line-height: y(2);
+          margin: y(10) 0 y(2) 0;
+        }
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &#about {
+      > section {
+        img.about {
+          height: y(15);
+
+          @include xl {
+            height: y(28);
+            grid-row: span 2;
+            margin: 0;
+          }
+        }
+  
+        > a {
+          margin-left: y(1);
+
+          @include xl {
+            align-self: end;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &#stages {
+      margin-top: y(6);
+
+      h2 {
+        @include xl {
+          font-size: y(1);
+        }
+      }
+
+      > * {
+        margin: 0 0 y(1) 0;
+        
+        &:last-child {
+          margin: 0;
+        }
+      }
+      
+      ol {
+        padding: 0;
+        list-style: none;
+
+        .category {
+          display: grid;
+          grid-template-columns: 3fr 4fr 3fr 4fr 4fr;
+          column-gap: $gap;
+          
+          @include xl {
+            font-size: y(2);
+            line-height: y(3);
+          }
+
+          a {
+            text-decoration: none;
+            grid-column: 1 / span 3;
+          }
+
+          > span {
+            grid-column: 4 / span 2;
+          }
+        }
+      }
+    }
+  }
+}
 </style>
