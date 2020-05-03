@@ -1,0 +1,8 @@
+
+@font-face {
+  font-family: "Patron";
+  src: url("./patron-regular-subset.eot") format("woff2"),
+       url("./patron-regular-subset.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
