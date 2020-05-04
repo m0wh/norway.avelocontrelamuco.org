@@ -1,7 +1,7 @@
 <template>
   <div class="layout-default">
     <Header />
-    <slot class="container"/>
+    <slot class="avclm-main"/>
     <Footer />
     <GridHelper />
   </div>
@@ -25,4 +25,9 @@ export default class DefaultLayout extends Vue {}
 
 <style lang="scss">
 @import '../assets/scss/main.scss';
+
+body {
+  font-size: y(1);
+  line-height: y(1);
+}
 </style>

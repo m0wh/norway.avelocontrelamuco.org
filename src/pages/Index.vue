@@ -76,11 +76,6 @@ export default class IndexPage extends Vue {}
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 
-body {
-  font-size: y(1);
-  line-height: y(1);
-}
-
 main {
   .page-cover {
     height: y(23);
