@@ -2,7 +2,7 @@
 index: 51
 slug: "tromsø-olderdalen"
 section: 5
-title: "Tromsø - Olderdalen"
+title: "Entrée dans le Grand Nord"
 date: "2018-08-24"
 distance: 94
 elevationGain: 639

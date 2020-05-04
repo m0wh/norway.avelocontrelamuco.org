@@ -3,7 +3,7 @@
 
 <template>
   <footer class="container">
-    <p class="col-1 copy">©19</p>
+    <p class="col-1 copy">©{{ new Date().getFullYear().toString().substr(2, 2) }}</p>
     <button class="col-3 top">↑</button>
     <a class="col-6 fb" href="#">Facebook</a>
   </footer>

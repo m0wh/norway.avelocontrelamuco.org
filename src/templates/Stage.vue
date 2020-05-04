@@ -3,8 +3,8 @@
     <main v-if="$page.stage" class="single-stage">
       <div class="page-nav container">
         <nav class="col-4-1">
-          <g-link :to="previous.path" v-if="previous">← {{ previous.from.name }}</g-link>
-          <g-link :to="next.path" v-if="next">{{ next.to.name }} →</g-link>
+          <g-link :to="previous.path" v-if="previous">← {{ previous.from.name }}<sup>{{ previous.from.countryISO }}</sup></g-link>
+          <g-link :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
         </nav>
       </div>
 
@@ -17,6 +17,18 @@
         <h1 class="col-1-6 col-lg-2-4">{{ $page.stage.title }}</h1>
       </div>
 
+      <div class="places container">
+        <div class="from col-1-3 col-lg-2">
+          <p>{{ $page.stage.from.name }}<sup>{{ $page.stage.from.countryISO }}</sup></p>
+          <p>{{ $page.stage.from.latTxt }}N</p>
+        </div>
+
+        <div class="to col-4-3 col-lg-3">
+          <p>{{ $page.stage.to.name }}<sup>{{ $page.stage.to.countryISO }}</sup></p>
+          <p>{{ $page.stage.to.latTxt }}N</p>
+        </div>
+      </div>
+
       <div class="content container">
         <div class="info col-1">
           <p>{{ $page.stage.distance }}km</p>
@@ -25,6 +37,8 @@
         </div>
 
         <div class="main col-1-6 col-lg-2-4" v-html="$page.stage.content" />
+
+        <g-link class="next col-1-6 col-lg-2-4" :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
       </div>
     </main>
   </Layout>
@@ -41,13 +55,15 @@
       verticalDrop
       date (format: "DD.MM.YY")
       content
+      from { name countryISO latTxt lngTxt }
+      to { name countryISO latTxt lngTxt }
     }
 
     allStage(order: ASC) {
       edges {
         node {id}
-        previous {path from { name }}
-        next {path to { name }}
+        previous {path from { name countryISO }}
+        next {path to { name countryISO }}
       }
     }
   }
@@ -110,6 +126,14 @@ export default class StagePage extends Vue {
     }
   }
 
+  .places {
+    margin-top: y(1);
+    
+    p {
+      margin: 0;
+    }
+  }
+
   .content {
     margin-top: y(4);
     
@@ -134,6 +158,17 @@ export default class StagePage extends Vue {
       p {
         font-size: y(1);
         margin: 0;
+      }
+    }
+
+    .next {
+      font-size: y(1);
+      line-height: y(1.1);
+      text-decoration: none;
+
+      @include lg {
+        font-size: y(2);
+        line-height: y(2.2);
       }
     }
   }

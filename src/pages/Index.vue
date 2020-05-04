@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <main>
-      <picture class="page-cover container"><img class="col-1-6" src="/images/knivsjelodden.jpg" alt="Knivsjelodden"></picture>
+      <picture class="page-cover container"><g-image class="col-1-6" src="../assets/images/knivsjelodden.jpg" width="1440" alt="Knivsjelodden" /></picture>
 
       <section id="about">
         <h2 style="display:none">About</h2>
@@ -13,7 +13,7 @@
 
         <section class="container">
           <p class="trip col-1-6 col-xl-1-4">Chamonix<sup>FRA</sup>→Nordkapp<sup>NOR</sup></p>
-          <img class="about col-1-6 col-xl-1-4" src="/images/phare.jpg">
+          <g-image class="about col-1-6 col-xl-1-4" src="../assets/images/phare.jpg" width="1024" />
           <p class="col-1-6 col-xl-6">Ce site est la trace et le journal de ce voyage.</p>
           <a class="col-1-6 col-xl-6" href="#">Démarrer→</a>
         </section>
