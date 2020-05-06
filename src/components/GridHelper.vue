@@ -22,9 +22,7 @@ export default class GridHelper extends Vue {
     this.display = localStorage.getItem('display_grids') === 'show' ?? false
     window.addEventListener('keypress', (e) => {
       if (e.key.toLowerCase() === 'w') {
-        this.calculateHorizontalBarsCount()
-        localStorage.setItem('display_grids', this.display ? 'hide' : 'show')
-        this.display = localStorage.getItem('display_grids') === 'show'
+        this.toggle()
       }
     })
 
@@ -35,6 +33,12 @@ export default class GridHelper extends Vue {
   calculateHorizontalBarsCount (): void {
     const height = Math.max(document.body.clientHeight, window.innerHeight)
     this.hBarsCount = Math.round(height / 16)
+  }
+
+  public toggle (): void {
+    this.calculateHorizontalBarsCount()
+    localStorage.setItem('display_grids', this.display ? 'hide' : 'show')
+    this.display = localStorage.getItem('display_grids') === 'show'
   }
 }
 </script>

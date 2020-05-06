@@ -2,8 +2,8 @@
   <div class="layout-default">
     <Header />
     <slot class="avclm-main"/>
-    <Footer />
-    <GridHelper />
+    <Footer @special="$refs.helper.toggle()" />
+    <GridHelper ref="helper" />
   </div>
 </template>
 

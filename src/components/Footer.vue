@@ -3,7 +3,7 @@
 
 <template>
   <footer class="container">
-    <p class="copy col-1-3 col-lg-1">© {{ new Date().getFullYear().toString() }} À Vélo contre la Muco</p>
+    <p class="copy col-1-3 col-lg-1" @click="$emit('special')">© {{ new Date().getFullYear().toString() }} À Vélo contre la Muco</p>
 
     <ul class="links col-2-4 col-lg-3-2">
       <li class="link"><a target="_blank" rel="noopener" href="https://facebook.com/avclm/">Facebook</a></li>
