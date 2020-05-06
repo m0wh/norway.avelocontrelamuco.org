@@ -4308,10 +4308,9 @@ gridsome@^0.7.0:
     webpack-merge "^4.2.1"
     yaml-loader "^0.5.0"
 
-gsap@^3.2.6:
+gsap@./gsap-bonus.tgz:
   version "3.2.6"
-  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.2.6.tgz#fbaddab30c8c2fb029d61ef56f667b42f99c932f"
-  integrity sha512-QX7WQWZUAooS9tOCYg4kKLcnjBreA4Xyu11EVx6zp4BbKijnMK+NtzkB47las/E0luFE84hGscOZm5vd13KzZA==
+  resolved "./gsap-bonus.tgz#c054748edc1e60bb89795d10fc2500072c319dae"
 
 har-schema@^2.0.0:
   version "2.0.0"
