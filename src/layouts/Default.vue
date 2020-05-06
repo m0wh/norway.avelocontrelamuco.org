@@ -26,8 +26,32 @@ export default class DefaultLayout extends Vue {}
 <style lang="scss">
 @import '../assets/scss/main.scss';
 
+@include reset;
+@include layout;
+
 body {
-  font-size: y(1);
-  line-height: y(1);
+  font-style: normal;
+
+  p {
+    margin: 0;
+    font-size: 15px;
+    @include lh(2);
+  }
+
+  * {
+    font-weight: $font-weight;
+    font-family: $font;
+  }
+
+  em {
+    font-style: normal;
+    font-family: $font-alt;
+  }
+
+  :not(.logo) > a:hover {
+    &, * {
+      font-style: italic;
+    }
+  }
 }
 </style>

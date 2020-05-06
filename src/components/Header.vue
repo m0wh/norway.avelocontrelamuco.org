@@ -1,14 +1,17 @@
 <template>
   <header class="container">
-      <div class="heart col-1">
-        <g-link to="/">♥</g-link>
-      </div>
-      <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-4">
-        <g-link to="/">avclm<sup>NOR</sup></g-link>
+      <button class="open-nav col-1"><span>Me</span><span>nu</span></button>
+
+      <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-5-5">
+        <g-link to="/">A Vélo<br/>contre la<br/>Muco</g-link>
       </component>
-      <nav class="col-6 main-nav">
-        <g-link to="/stages">Étapes</g-link>
-        <g-link to="/gallery">Gallerie</g-link>
+
+      <nav class="col-1-2 main-nav">
+        <ul class="nav-items">
+          <li class="nav-item"><g-link to="/stages">Étapes</g-link></li>
+          <li class="nav-item"><g-link to="/gallery">Gallerie</g-link></li>
+          <li class="nav-item"><g-link to="/gallery">Facebook</g-link></li>
+        </ul>
       </nav>
   </header>
 </template>
@@ -24,39 +27,55 @@ export default class Header extends Vue {}
 @import '../assets/scss/main.scss';
 
 header {
-  margin-top: y(1);
-  margin-bottom: y(2);
+  align-items: flex-start;
+  height: y(8);
+  padding: y(1) 0;
+  
+  .logo {
+    font-size: 15px;
+    margin: 0;
+    @include lh(2);
+    order: 2;
 
-  .heart {
-    font-size: y(1);
-
-    a { text-decoration: none; }
+    a {
+      text-decoration: none;
+    }
   }
 
-  .logo {
-    align-self: center;
-    margin: 0;
-    font-size: y(1);
+  .open-nav {
+    text-align: left;
+    @include lh(2);
+    order: 1;
 
-    a { text-decoration: none; }
+    @include xl { display: none; }
 
-    @include xl {
-      font-size: y(1);
+    span {
+      display: inline-block;
     }
   }
 
   .main-nav {
-    justify-self: right;
-    align-self: center;
+    display: none;
 
     @include xl {
-      font-size: y(1);
-    }
+      display: block;
+      order: 1;
 
-    a {
-      text-decoration: none;
-      text-transform: lowercase;
-      margin-left: y(1);
+      .nav-items {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+
+        .nav-item {
+          flex-grow: 1;
+          
+          a {
+            text-decoration: none;
+            @include lh(2)
+          }
+        }
+      }
     }
   }
 }

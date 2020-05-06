@@ -1,54 +1,22 @@
 <template>
   <Layout>
-    <main>
-      <picture class="page-cover container"><g-image class="col-1-6" src="../assets/images/knivsjelodden.jpg" width="1440" alt="Knivsjelodden" /></picture>
+    <main class="container">
+      <p class="col-2-8 col-lg-3-6">A Vélo contre la Muco est une association qui organise des voyages caritatifs à vélo en faveur de la <em>recherche contre la mucoviscidose.</em></p>
+      <g-image class="col-1-9" src="../assets/images/knivsjelodden.jpg" width="1440" alt="Knivsjelodden"/>
+      <p class="col-2-8 col-lg-3-6">En été 2018, Théotime Massot et Malo Widerspach ont entrepris un voyage mémorable : <em>de l'Aiguille du Midi au Soleil de Minuit</em>.</p>
+      <p class="col-2-8 col-lg-3-6">L'itinéraire traverse <em>cinq pays sur plus de 4900km</em>. Ce carnet de voyage se divise en six grandes parties.</p>
 
-      <section id="about">
-        <h2 style="display:none">About</h2>
+      <ol class="chapters col-2-8 col-lg-3-7">
+        <li v-for="(section, i) in sections" :key="i" class="chapter">
+          <g-link :to="getSectionStages(i)[0].node.path">
+            {{ section }}
+            <em class="length">({{ getSectionStages(i).length }})</em>
+          </g-link>
+        </li>
+      </ol>
 
-        <section class="container">
-          <p class="col-1-6 col-xl-4-3">A Vélo contre la Muco est une association qui organise des voyages caritatifs à vélo en faveur de la recherche contre la mucoviscidose.</p>
-          <p class="col-1-6 col-xl-4-3">En été 2018, Théotime Massot et Malo Widerspach ont entrepris un voyage mémorable : de l'Aiguille du Midi au Soleil de Minuit.</p>
-        </section>
-
-        <section class="container">
-          <p class="trip col-1-6 col-xl-1-4">Chamonix<sup>FRA</sup>→Nordkapp<sup>NOR</sup></p>
-          <g-image class="about col-1-6 col-xl-1-4" src="../assets/images/phare.jpg" width="1024" />
-          <p class="col-1-6 col-xl-6">Ce site est la trace et le journal de ce voyage.</p>
-          <a class="col-1-6 col-xl-6" href="#">Démarrer→</a>
-        </section>
-      </section>
-
-      <section class="container" id="stages">
-        <h2 class="col-1-6 col-xl-1">Étapes</h2>
-
-        <ol class="col-1-6 col-xl-2-5">
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 0)[0].node.path">France/Suisse</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 0).length }})</span>
-          </li>
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 1)[0].node.path">Allemagne/Danemark</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 1).length }})</span>
-          </li>
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 2)[0].node.path">Monts Norvégiens</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 2).length }})</span>
-          </li>
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 3)[0].node.path">Côtes Norvégiennes</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 3).length }})</span>
-          </li>
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 4)[0].node.path">Îles Lofoten</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 4).length }})</span>
-          </li>
-          <li class="category">
-            <g-link :to="$page.allStage.edges.filter(edge => edge.node.section === 5)[0].node.path">Norvège du Nord</g-link>
-            <span class="length">({{ $page.allStage.edges.filter(edge => edge.node.section === 5).length }})</span>
-          </li>
-        </ol>
-      </section>
+      <g-link class="more-links col-2-4 col-3-3" to="/etapes">Toutes les étapes</g-link>
+      <g-link class="more-links col-6-4 col-6-3" to="/gallerie">Gallerie photo</g-link>
     </main>
   </Layout>
 </template>
@@ -67,112 +35,99 @@ query {
 </page-query>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component } from "vue-property-decorator";
 
 @Component({})
-export default class IndexPage extends Vue {}
+export default class IndexPage extends Vue {
+  //! Grandes parties => chapitres
+
+  // TODO find a better way to manage sections data
+  private sections: string[] = [
+    "France/Suisse",
+    "Allemagne/Danemark",
+    "Massifs Norvégiens",
+    "Atlantique",
+    "Lofoten/Vesterålen",
+    "Grand Nord"
+  ];
+
+  private getSectionStages(i: number): number {
+    return (this as any).$page.allStage.edges.filter(
+      (edge: any) => edge.node.section === i
+    );
+  }
+}
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
+@import "../assets/scss/main.scss";
 
 main {
-  .page-cover {
-    height: y(23);
+  margin-top: y(18);
 
-    @include xl {
-      height: y(56);
-    }
+  > p {
+    font-size: 20px;
+    @include lh(3);
+    margin-bottom: y(3);
 
-    img {
-      height: 100%;
-      width: 100%;
+    @include lg {
+      font-size: 60px;
+      @include lh(8);
+      margin-bottom: y(8);
     }
   }
 
-  section {
-    margin: y(2) 0;
+  img {
+    height: y(33);
+    margin-top: y(3);
+    margin-bottom: y(6);
 
-    > p, img {
-      margin: 0 0 y(1) 0;
+    @include md { height: y(62); }
 
-      &.trip {
-        @include xl {
-          font-size: y(2);
-          line-height: y(2);
-          margin: y(10) 0 y(2) 0;
-        }
-      }
-
-      &:last-child {
-        margin: 0;
-      }
+    @include lg {
+      height: y(72);
+      margin-top: 0;
+      margin-bottom: y(9);
     }
 
-    &#about {
-      > section {
-        img.about {
-          height: y(15);
+    @include xl { height: y(96); }
+  }
 
-          @include xl {
-            height: y(28);
-            grid-row: span 2;
-            margin: 0;
-          }
-        }
-  
-        > a {
-          margin-left: y(1);
+  .chapters {
+    list-style: none;
+    padding: 0;
+    margin-top: y(5);
+    margin-bottom: y(6);
 
-          @include xl {
-            align-self: end;
-            margin: 0;
-          }
-        }
+    @include lg {
+      margin-top: y(16);
+      margin-bottom: y(22);
+    }
+    
+    .chapter {
+      @include lh(4);
+      font-size: 24px;
+      white-space: nowrap;
+
+      @include lg {
+        font-size: 76px;
+        @include lh(12);
+      }
+
+      a {
+        text-decoration: none;
       }
     }
+  }
 
-    &#stages {
-      margin-top: y(6);
+  .more-links {
+    @include lh(2);
+    font-size: 15px;
+    text-decoration: none;
+    margin-bottom: y(3);
 
-      h2 {
-        @include xl {
-          font-size: y(1);
-        }
-      }
-
-      > * {
-        margin: 0 0 y(1) 0;
-        
-        &:last-child {
-          margin: 0;
-        }
-      }
-      
-      ol {
-        padding: 0;
-        list-style: none;
-
-        .category {
-          display: grid;
-          grid-template-columns: 3fr 4fr 3fr 4fr 4fr;
-          column-gap: $gap;
-          
-          @include xl {
-            font-size: y(2);
-            line-height: y(3);
-          }
-
-          a {
-            text-decoration: none;
-            grid-column: 1 / span 3;
-          }
-
-          > span {
-            grid-column: 4 / span 2;
-          }
-        }
-      }
+    @include lg {
+      margin-bottom: y(7);
     }
   }
 }

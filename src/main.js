@@ -5,5 +5,10 @@ import DefaultLayout from '~/layouts/Default.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
+  head.link.push({
+    rel: 'stylesheet',
+    href: '/fonts/suisse.css'
+  })
+
   Vue.component('Layout', DefaultLayout)
 }

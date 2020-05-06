@@ -41,42 +41,5 @@ export default class IndexPage extends Vue {}
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 
-.all-stages {
-  padding-top: y(8);
-
-  .heading {
-    h1 {
-      margin: 0;
-      font-size: y(2);
-      margin-bottom: y(5);
-
-      @include lg {
-        font-size: y(4);
-      }
-    }
-  }
-
-  .stages {
-    list-style: none;
-    padding: 0;
-    line-height: 1;
-    font-size: y(1);
-
-    li {
-      p {
-        margin: 0;
-        align-self: center;
-      }
-
-      &:hover {
-        background-color: #0001;
-      }
-
-      div a {
-        text-decoration: none;
-        display: inline-block;
-      }
-    }
-  }
-}
+.all-stages {}
 </style>

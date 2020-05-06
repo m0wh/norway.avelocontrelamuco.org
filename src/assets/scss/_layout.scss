@@ -1,14 +1,20 @@
 
-$margins: 1rem;
-$gap: .2rem;
-$columns: 4fr 3fr 4fr 3fr 4fr 4fr;
-
-@function x($i) {
-  @return calc(#{$i} * ((100vw - #{$margins * 2}) / 22));
-}
+$margins: 10px;
+$gap: 10px;
+$columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+$font-height: 0.675; // defined by font metrics
 
 @function y($i) {
-  @return calc(#{$i} * 20rem / 16);
+  @return calc(#{$i} * 8px);
+}
+
+@function leading($i) {
+  @return calc((#{y($i)} - #{$font-height} * 1em) / 2);
+}
+
+@mixin lh ($i) {
+  line-height: y($i);
+  transform: translateY(leading(#{$i}));
 }
 
 @mixin md {
@@ -23,46 +29,48 @@ $columns: 4fr 3fr 4fr 3fr 4fr 4fr;
   @media (min-width: 1024px) { @content; }
 }
 
-.container {
-  position: relative;
-  margin-left: $margins;
-  margin-right: $margins;
-  display: grid;
-  grid-template-columns: $columns;
-  column-gap: $gap;
-}
-
-[class*="col-"] {
-  @for $a from 1 through length($columns) {
-    &.col-#{$a} { grid-column: $a; }
-    @for $b from 1 through length($columns) {
-      &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
-    }
+@mixin layout {
+  .container {
+    position: relative;
+    margin-left: $margins;
+    margin-right: $margins;
+    display: grid;
+    grid-template-columns: $columns;
+    column-gap: $gap;
   }
 
-  @include md {
+  [class*="col-"] {
     @for $a from 1 through length($columns) {
-      &.col-md-#{$a} { grid-column: $a; }
+      &.col-#{$a} { grid-column: $a; }
       @for $b from 1 through length($columns) {
-        &.col-md-#{$a}-#{$b} { grid-column: $a / span $b; }
+        &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
       }
     }
-  }
 
-  @include lg {
-    @for $a from 1 through length($columns) {
-      &.col-lg-#{$a} { grid-column: $a; }
-      @for $b from 1 through length($columns) {
-        &.col-lg-#{$a}-#{$b} { grid-column: $a / span $b; }
+    @include md {
+      @for $a from 1 through length($columns) {
+        &.col-md-#{$a} { grid-column: $a; }
+        @for $b from 1 through length($columns) {
+          &.col-md-#{$a}-#{$b} { grid-column: $a / span $b; }
+        }
       }
     }
-  }
 
-  @include xl {
-    @for $a from 1 through length($columns) {
-      &.col-xl-#{$a} { grid-column: $a; }
-      @for $b from 1 through length($columns) {
-        &.col-xl-#{$a}-#{$b} { grid-column: $a / span $b; }
+    @include lg {
+      @for $a from 1 through length($columns) {
+        &.col-lg-#{$a} { grid-column: $a; }
+        @for $b from 1 through length($columns) {
+          &.col-lg-#{$a}-#{$b} { grid-column: $a / span $b; }
+        }
+      }
+    }
+
+    @include xl {
+      @for $a from 1 through length($columns) {
+        &.col-xl-#{$a} { grid-column: $a; }
+        @for $b from 1 through length($columns) {
+          &.col-xl-#{$a}-#{$b} { grid-column: $a / span $b; }
+        }
       }
     }
   }

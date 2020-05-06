@@ -18,19 +18,5 @@ export default class IndexPage extends Vue {}
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 
-.gallery {
-  padding-top: y(8);
-
-  .heading {
-    h1 {
-      margin: 0;
-      font-size: y(2);
-      margin-bottom: y(5);
-
-      @include lg {
-        font-size: y(4);
-      }
-    }
-  }
-}
+.gallery {}
 </style>
