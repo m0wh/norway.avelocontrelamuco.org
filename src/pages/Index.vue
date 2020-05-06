@@ -15,8 +15,8 @@
         </li>
       </ol>
 
-      <g-link class="more-links col-2-4 col-3-3" to="/etapes">Toutes les étapes</g-link>
-      <g-link class="more-links col-6-4 col-6-3" to="/gallerie">Gallerie photo</g-link>
+      <g-link class="more-links col-2-4 col-lg-3-3" to="/etapes">Toutes les étapes</g-link>
+      <g-link class="more-links col-6-4 col-lg-6-3" to="/gallerie">Gallerie photo</g-link>
     </main>
   </Layout>
 </template>
