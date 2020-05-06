@@ -63,7 +63,11 @@ export default class IndexPage extends Vue {
 @import "../assets/scss/main.scss";
 
 main {
-  margin-top: y(33);
+  margin-top: y(26);
+
+  @include lg {
+    margin-top: y(33);
+  }
 
   > p {
     font-size: 20px;
