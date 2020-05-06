@@ -3,7 +3,13 @@ $font: 'si', 'Arial', sans-serif;
 $font-alt: 'sw', 'Times New Roman', serif;
 $font-weight: 300;
 
+$easing: cubic-bezier(.8,0,.03,1);
+
 @mixin reset {
+  :root {
+    --main-easing: #{$easing};
+  }
+
   * {
     box-sizing: border-box;
     font-kerning: none;

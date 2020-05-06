@@ -11,7 +11,7 @@
         <li class="link"><a target="_blank" rel="noopener" href="mailto:avelocontrelamuco@gmail.com">Mail</a></li>
       </ul>
 
-      <button class="top col-9 col-lg-7-1">↑</button>
+      <button class="top col-9 col-lg-7-1" @click="scrollTop">↑</button>
       <p class="credits col-6-4 col-lg-9">Site développé par <a target="_blank" href="https://mowh.fr/?ref=avelocontrelamuco.org">Malo Widerspach</a></p>
     </div>
     <div class="end-block" />
@@ -20,9 +20,14 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import gsap from 'gsap'
 
 @Component({})
-export default class Footer extends Vue {}
+export default class Footer extends Vue {
+  private scrollTop (): void {
+    gsap.to(window, { scrollTo: 0, duration: 1, ease: 'main' })
+  }
+}
 </script>
 
 <style lang="scss" scoped>
