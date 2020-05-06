@@ -31,7 +31,7 @@ export default class GridHelper extends Vue {
   }
 
   calculateHorizontalBarsCount (): void {
-    const height = Math.max(document.body.clientHeight, window.innerHeight)
+    const height = Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)
     this.hBarsCount = Math.round(height / 16)
   }
 

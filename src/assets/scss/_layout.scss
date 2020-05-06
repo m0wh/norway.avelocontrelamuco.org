@@ -29,6 +29,10 @@ $font-height: 0.675; // defined by font metrics
   @media (min-width: 1024px) { @content; }
 }
 
+@mixin xxl {
+  @media (min-width: 1440px) { @content; }
+}
+
 @mixin layout {
   .container {
     position: relative;
@@ -70,6 +74,15 @@ $font-height: 0.675; // defined by font metrics
         &.col-xl-#{$a} { grid-column: $a; }
         @for $b from 1 through length($columns) {
           &.col-xl-#{$a}-#{$b} { grid-column: $a / span $b; }
+        }
+      }
+    }
+
+    @include xxl {
+      @for $a from 1 through length($columns) {
+        &.col-xxl-#{$a} { grid-column: $a; }
+        @for $b from 1 through length($columns) {
+          &.col-xxl-#{$a}-#{$b} { grid-column: $a / span $b; }
         }
       }
     }

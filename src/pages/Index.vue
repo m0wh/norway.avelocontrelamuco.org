@@ -66,6 +66,10 @@ main {
   margin-top: y(26);
 
   @include lg {
+    margin-top: y(37);
+  }
+
+  @include xl {
     margin-top: y(33);
   }
 
@@ -75,6 +79,12 @@ main {
     margin-bottom: y(3);
 
     @include lg {
+      font-size: 36px;
+      @include lh(5);
+      margin-bottom: y(5);
+    }
+
+    @include xl {
       font-size: 60px;
       @include lh(8);
       margin-bottom: y(8);
@@ -104,18 +114,38 @@ main {
     margin-bottom: y(6);
 
     @include lg {
+      margin-top: y(11);
+      margin-bottom: y(12);
+    }
+
+    @include xl {
       margin-top: y(16);
       margin-bottom: y(22);
     }
-    
+
+    @include xl {
+      margin-top: y(20);
+      margin-bottom: y(26);
+    }
+
     .chapter {
       @include lh(4);
       font-size: 24px;
       white-space: nowrap;
 
       @include lg {
-        font-size: 76px;
+        font-size: 5vw;
+        @include lh(7);
+      }
+
+      @include xl {
+        font-size: 6vw;
         @include lh(12);
+      }
+
+      @include xxl {
+        font-size: 6vw;
+        @include lh(14);
       }
 
       a {
@@ -129,6 +159,7 @@ main {
     font-size: 15px;
     text-decoration: none;
     margin-bottom: y(3);
+    justify-self: start;
 
     @include lg {
       margin-bottom: y(7);
