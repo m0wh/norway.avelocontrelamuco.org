@@ -6,17 +6,15 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { CustomEase } from "gsap/CustomEase";
 
-gsap.registerPlugin(ScrollToPlugin, CustomEase)
-
-const cubicBezierRegex = /cubic-bezier\(([0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?)\)/
-
-const bezier = window.getComputedStyle(document.documentElement)
-  .getPropertyValue('--main-easing')
-  .match(cubicBezierRegex)[1]
-CustomEase.create('main', bezier)
-
 export default function (Vue, { router, head, isClient }) {
-  // Set default layout as a global component
+  gsap.registerPlugin(ScrollToPlugin, CustomEase)
+
+  const cubicBezierRegex = /cubic-bezier\(([0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?)\)/
+  const bezier = window.getComputedStyle(document.documentElement)
+    .getPropertyValue('--main-easing')
+    .match(cubicBezierRegex)[1]
+  CustomEase.create('main', bezier)
+
   head.link.push({
     rel: 'stylesheet',
     href: '/fonts/suisse.css'
