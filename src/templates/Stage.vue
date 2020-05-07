@@ -1,44 +1,21 @@
 <template>
   <Layout>
     <main v-if="$page.stage" class="single-stage">
-      <div class="page-nav container">
-        <nav class="col-4-1">
-          <g-link :to="previous.path" v-if="previous">← {{ previous.from.name }}<sup>{{ previous.from.countryISO }}</sup></g-link>
-          <g-link :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
-        </nav>
-      </div>
-
       <div class="heading container">
-        <div class="info col-1">
-          <p>Étape {{ $page.stage.index }}</p>
-          <p>{{ $page.stage.date }}</p>
-        </div>
-
-        <h1 class="col-1-6 col-lg-2-4">{{ $page.stage.title }}</h1>
+        <p class="stage-n col-2-7">{{ $page.stage.date }} / <em>Étape {{ $page.stage.index }}</em></p>
+        <g-link class="prev col-1" :to="previous.path" v-if="previous">←</g-link>
+        <h1 class="title col-2-7">{{ $page.stage.title }}</h1>
+        <g-link class="next col-9" :to="next.path" v-if="next">→</g-link>
       </div>
 
-      <div class="places container">
-        <div class="from col-1-3 col-lg-2">
-          <p>{{ $page.stage.from.name }}<sup>{{ $page.stage.from.countryISO }}</sup></p>
-          <p>{{ $page.stage.from.latTxt }}N</p>
-        </div>
-
-        <div class="to col-4-3 col-lg-3">
-          <p>{{ $page.stage.to.name }}<sup>{{ $page.stage.to.countryISO }}</sup></p>
-          <p>{{ $page.stage.to.latTxt }}N</p>
-        </div>
+      <div class="container">
+        <div class="content col-2-8" v-html="$page.stage.content" />
       </div>
 
-      <div class="content container">
-        <div class="info col-1">
-          <p>{{ $page.stage.distance }}km</p>
-          <p>+{{ $page.stage.elevationGain }}m</p>
-          <p>-{{ $page.stage.verticalDrop }}m</p>
-        </div>
-
-        <div class="main col-1-6 col-lg-2-4" v-html="$page.stage.content" />
-
-        <g-link class="next col-1-6 col-lg-2-4" :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
+      <div class="nav container">
+        <p class="latitude col-2-8"><em>{{ $page.stage.to.latTxt.replace(/ /g, '') }}</em></p>
+        <g-link class="col-2-4" :to="previous.path" v-if="previous">← {{ previous.from.name }}</g-link>
+        <g-link class="col-6-4" :to="next.path" v-if="next">{{ next.to.name }} →</g-link>
       </div>
     </main>
   </Layout>
@@ -48,22 +25,18 @@
   query Stage ($path: String!) {
     stage: stage (path: $path) {
       id
+      date (format: "DD.MM.YY")
       index
       title
-      distance
-      elevationGain
-      verticalDrop
-      date (format: "DD.MM.YY")
-      content
-      from { name countryISO latTxt lngTxt }
-      to { name countryISO latTxt lngTxt }
+      content 
+      to { latTxt }
     }
 
     allStage(order: ASC) {
       edges {
         node {id}
-        previous {path from { name countryISO }}
-        next {path to { name countryISO }}
+        previous {path from { name }}
+        next {path to { name }}
       }
     }
   }
@@ -80,8 +53,68 @@ export default class StagePage extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../assets/scss/main.scss';
 
-.single-stage {}
+.single-stage {
+  margin-top: y(20);
+  
+  .heading {
+    margin-bottom: y(3);
+    
+    .stage-n {
+      font-size: 15px;
+      @include lh(2);
+      margin-bottom: y(1);
+    }
+
+    .title {
+      font-size: 38px;
+      @include lh(5);
+      margin: 0;
+    }
+
+    .prev,
+    .next {
+      font-size: 24px;
+      @include lh(3);
+      text-decoration: none;
+      padding: y(1) 0;
+      align-self: flex-start;
+      /* font-family: $font-alt; */
+    }
+
+    .next { text-align: right; }
+  }
+
+  .content {
+    p {
+      font-size: 15px;
+      @include lh(3);
+      padding: y(3) 0;
+    } 
+  }
+
+  .nav {
+    margin-top: y(4);
+
+    .latitude {
+      font-size: 30px;
+      @include lh(4);
+    }
+
+    a {
+      font-size: 15px;
+      @include lh(2);
+      margin-top: y(4);
+      text-decoration: none;
+      margin-bottom: y(3);
+      justify-self: start;
+
+      @include bp('lg') {
+        margin-bottom: y(7);
+      }
+    }
+  }
+}
 </style>
