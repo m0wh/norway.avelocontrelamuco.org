@@ -17,20 +17,23 @@ $font-height: 0.675; // defined by font metrics
   transform: translateY(leading(#{$i}));
 }
 
-@mixin md {
-  @media (min-width: 660px) { @content; }
+$breakpoints: (
+  'md': 660,
+  'lg': 770,
+  'xl': 1024,
+  'xxl': 1440
+);
+
+@mixin bp ($bp) {
+  @media (min-width: #{map-get($breakpoints, $bp)}px) {
+    @content;
+  }
 }
 
-@mixin lg {
-  @media (min-width: 770px) { @content; }
-}
-
-@mixin xl {
-  @media (min-width: 1024px) { @content; }
-}
-
-@mixin xxl {
-  @media (min-width: 1440px) { @content; }
+@mixin bp-down ($bp) {
+  @media (max-width: #{map-get($breakpoints, $bp) - 1}px) {
+    @content;
+  }
 }
 
 @mixin layout {
@@ -41,6 +44,11 @@ $font-height: 0.675; // defined by font metrics
     display: grid;
     grid-template-columns: $columns;
     column-gap: $gap;
+
+    &--nopad {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
 
   [class*="col-"] {
@@ -51,38 +59,22 @@ $font-height: 0.675; // defined by font metrics
       }
     }
 
-    @include md {
-      @for $a from 1 through length($columns) {
-        &.col-md-#{$a} { grid-column: $a; }
-        @for $b from 1 through length($columns) {
-          &.col-md-#{$a}-#{$b} { grid-column: $a / span $b; }
+    @each $breakpoint, $value in $breakpoints {
+      @include bp(#{$breakpoint}) {
+        @for $a from 1 through length($columns) {
+          &.col-#{$breakpoint}-#{$a} { grid-column: $a; }
+          @for $b from 1 through length($columns) {
+            &.col-#{$breakpoint}-#{$a}-#{$b} { grid-column: $a / span $b; }
+          }
         }
       }
-    }
 
-    @include lg {
-      @for $a from 1 through length($columns) {
-        &.col-lg-#{$a} { grid-column: $a; }
-        @for $b from 1 through length($columns) {
-          &.col-lg-#{$a}-#{$b} { grid-column: $a / span $b; }
-        }
-      }
-    }
-
-    @include xl {
-      @for $a from 1 through length($columns) {
-        &.col-xl-#{$a} { grid-column: $a; }
-        @for $b from 1 through length($columns) {
-          &.col-xl-#{$a}-#{$b} { grid-column: $a / span $b; }
-        }
-      }
-    }
-
-    @include xxl {
-      @for $a from 1 through length($columns) {
-        &.col-xxl-#{$a} { grid-column: $a; }
-        @for $b from 1 through length($columns) {
-          &.col-xxl-#{$a}-#{$b} { grid-column: $a / span $b; }
+      @include bp-down(#{$breakpoint}) {
+        @for $a from 1 through length($columns) {
+          &.col-#{$breakpoint}-down-#{$a} { grid-column: $a; }
+          @for $b from 1 through length($columns) {
+            &.col-#{$breakpoint}-down-#{$a}-#{$b} { grid-column: $a / span $b; }
+          }
         }
       }
     }

@@ -65,11 +65,11 @@ export default class IndexPage extends Vue {
 main {
   margin-top: y(26);
 
-  @include lg {
+  @include bp('lg') {
     margin-top: y(37);
   }
 
-  @include xl {
+  @include bp('xl') {
     margin-top: y(33);
   }
 
@@ -78,13 +78,13 @@ main {
     @include lh(3);
     margin-bottom: y(3);
 
-    @include lg {
+    @include bp('lg') {
       font-size: 36px;
       @include lh(5);
       margin-bottom: y(5);
     }
 
-    @include xl {
+    @include bp('xl') {
       font-size: 60px;
       @include lh(8);
       margin-bottom: y(8);
@@ -96,15 +96,15 @@ main {
     margin-top: y(3);
     margin-bottom: y(6);
 
-    @include md { height: y(62); }
+    @include bp('md') { height: y(62); }
 
-    @include lg {
+    @include bp('lg') {
       height: y(72);
       margin-top: 0;
       margin-bottom: y(9);
     }
 
-    @include xl { height: y(96); }
+    @include bp('xl') { height: y(96); }
   }
 
   .chapters {
@@ -113,17 +113,17 @@ main {
     margin-top: y(5);
     margin-bottom: y(6);
 
-    @include lg {
+    @include bp('lg') {
       margin-top: y(11);
       margin-bottom: y(12);
     }
 
-    @include xl {
+    @include bp('xl') {
       margin-top: y(16);
       margin-bottom: y(22);
     }
 
-    @include xl {
+    @include bp('xl') {
       margin-top: y(20);
       margin-bottom: y(26);
     }
@@ -133,17 +133,17 @@ main {
       font-size: 24px;
       white-space: nowrap;
 
-      @include lg {
+      @include bp('lg') {
         font-size: 5vw;
         @include lh(7);
       }
 
-      @include xl {
+      @include bp('xl') {
         font-size: 6vw;
         @include lh(12);
       }
 
-      @include xxl {
+      @include bp('xxl') {
         font-size: 6vw;
         @include lh(14);
       }
@@ -161,7 +161,7 @@ main {
     margin-bottom: y(3);
     justify-self: start;
 
-    @include lg {
+    @include bp('lg') {
       margin-bottom: y(7);
     }
   }
