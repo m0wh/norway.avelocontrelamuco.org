@@ -23,14 +23,16 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'content/stages/**/*.md',
-        typeName: 'Stage',
-        route: '/stages/:slug'
+        typeName: 'Stage'
       }
     },
     {
       use: 'gridsome-plugin-typescript'
     }
   ],
+  templates: {
+    Stage: '/stages/:slug'
+  },
   chainWebpack (config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
