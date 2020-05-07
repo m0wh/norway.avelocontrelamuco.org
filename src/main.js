@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollToPlugin, CustomEase)
 
 const cubicBezierRegex = /cubic-bezier\(([0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?, ?[0-9]*?\.?[0-9]*?)\)/
 
-const bezier = getComputedStyle(document.documentElement)
+const bezier = window.getComputedStyle(document.documentElement)
   .getPropertyValue('--main-easing')
   .match(cubicBezierRegex)[1]
 CustomEase.create('main', bezier)
