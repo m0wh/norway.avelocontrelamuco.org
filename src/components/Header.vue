@@ -18,10 +18,18 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import EventBus from '../utils/EventBus'
 
 @Component({})
 export default class Header extends Vue {
   private menuOpen: boolean = false
+
+  mounted (): void {
+    EventBus.$on('CLOSE_NAV', () => {
+      this.menuOpen = false
+      document.body.style.overflowY = this.menuOpen ? 'hidden' : 'auto'
+    })
+  }
 
   private toggleMenu (): void {
     this.menuOpen = !this.menuOpen

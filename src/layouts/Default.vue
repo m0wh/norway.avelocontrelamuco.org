@@ -1,14 +1,14 @@
 <template>
   <div class="layout-default">
-    <Header />
+    <Header ref="header" />
     <slot class="avclm-main"/>
-    <Footer @special="$refs.helper.toggle()" />
+    <Footer v-if="footer" @special="$refs.helper.toggle()" />
     <GridHelper ref="helper" />
   </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 import Header from '../components/Header.vue'
 import Footer from '../components/Footer.vue'
 import GridHelper from '../components/GridHelper.vue'
@@ -16,11 +16,11 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { CustomEase } from "gsap/CustomEase";
 
-// Component.registerHooks([
-//   'beforeRouteEnter',
-//   'beforeRouteLeave',
-//   'beforeRouteUpdate'
-// ])
+Component.registerHooks([
+  // 'beforeRouteEnter',
+  'beforeRouteLeave',
+  // 'beforeRouteUpdate'
+])
 
 @Component({
   components: {
@@ -30,6 +30,8 @@ import { CustomEase } from "gsap/CustomEase";
   }
 })
 export default class DefaultLayout extends Vue {
+  @Prop({ type: Boolean, default: true }) footer?: boolean
+
   mounted () {
     gsap.registerPlugin(ScrollToPlugin, CustomEase)
 

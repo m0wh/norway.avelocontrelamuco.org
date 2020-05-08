@@ -11,6 +11,7 @@
     "noImplicitReturns": true,
     "outDir": "./built/",
     "sourceMap": true,
+    "allowJs": true,
     "strict": true,
     "experimentalDecorators": true,
   },

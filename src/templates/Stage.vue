@@ -59,7 +59,7 @@ export default class StagePage extends Vue {
 <style lang="scss" scoped>
 @import '../assets/scss/main.scss';
 
-.single-stage { 
+.single-stage {
   margin-top: y(34);
 
     @include bp('lg') {
