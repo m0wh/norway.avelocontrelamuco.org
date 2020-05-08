@@ -1,5 +1,6 @@
 {
   "name": "avelocontrelamuco.org",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "gridsome build",
@@ -10,7 +11,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.5.0",
     "gridsome": "^0.7.0",
-    "gsap": "^3.2.6",
+    "gsap": "./gsap-bonus.tgz",
     "vue-property-decorator": "^8.4.2"
   },
   "devDependencies": {

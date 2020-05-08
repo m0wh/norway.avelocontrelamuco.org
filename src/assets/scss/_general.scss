@@ -1,44 +1,39 @@
 
-* {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-}
+$font: 'si', 'Arial', sans-serif;
+$font-alt: 'sw', 'Times New Roman', serif;
+$font-weight: 300;
 
-@supports (font-variation-settings: normal) {
-  * {
-    font-family: 'Inter V', sans-serif;
-    font-weight: 600;
+$easing: cubic-bezier(.8,0,.03,1);
+
+@mixin reset {
+  :root {
+    --main-easing: #{$easing};
   }
-}
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
+  * {
+    box-sizing: border-box;
+    font-kerning: none;
+  }
+  
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
 
-button {
-  background: none;
-  font-size: 1em;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-}
+  button {
+    background: none;
+    font-size: 1em;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
 
-img {
-  width: 100%;
-  object-fit: cover;
-}
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 
-sup {
-  font-size: 0.6em;
-}
-
-a {
-  color: currentColor;
-}
-
-h2 {
-  line-height: y(2);
-  font-size: y(2);
-  margin: 0;
+  a {
+    color: currentColor;
+  }
 }

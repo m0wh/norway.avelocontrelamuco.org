@@ -1,44 +1,19 @@
 <template>
   <Layout>
     <main v-if="$page.stage" class="single-stage">
-      <div class="page-nav container">
-        <nav class="col-4-1">
-          <g-link :to="previous.path" v-if="previous">← {{ previous.from.name }}<sup>{{ previous.from.countryISO }}</sup></g-link>
-          <g-link :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
-        </nav>
-      </div>
-
       <div class="heading container">
-        <div class="info col-1">
-          <p>Étape {{ $page.stage.index }}</p>
-          <p>{{ $page.stage.date }}</p>
-        </div>
-
-        <h1 class="col-1-6 col-lg-2-4">{{ $page.stage.title }}</h1>
+        <p class="stage-n col-2-7 col-lg-3-6">{{ $page.stage.date }} / <em>Étape {{ $page.stage.index }}</em></p>
+        <g-link class="prev col-1" :to="previous.path" v-if="previous">←</g-link>
+        <h1 class="title col-2-7 col-lg-3-6">{{ $page.stage.title }}</h1>
+        <g-link class="next col-9" :to="next.path" v-if="next">→</g-link>
       </div>
 
-      <div class="places container">
-        <div class="from col-1-3 col-lg-2">
-          <p>{{ $page.stage.from.name }}<sup>{{ $page.stage.from.countryISO }}</sup></p>
-          <p>{{ $page.stage.from.latTxt }}N</p>
-        </div>
-
-        <div class="to col-4-3 col-lg-3">
-          <p>{{ $page.stage.to.name }}<sup>{{ $page.stage.to.countryISO }}</sup></p>
-          <p>{{ $page.stage.to.latTxt }}N</p>
-        </div>
-      </div>
-
-      <div class="content container">
-        <div class="info col-1">
-          <p>{{ $page.stage.distance }}km</p>
-          <p>+{{ $page.stage.elevationGain }}m</p>
-          <p>-{{ $page.stage.verticalDrop }}m</p>
-        </div>
-
-        <div class="main col-1-6 col-lg-2-4" v-html="$page.stage.content" />
-
-        <g-link class="next col-1-6 col-lg-2-4" :to="next.path" v-if="next">{{ next.to.name }}<sup>{{ next.to.countryISO }}</sup> →</g-link>
+      <div class="content col-1-9 container" v-html="content" />
+ 
+      <div class="nav container">
+        <p class="latitude col-2-8 col-lg-2-7"><em>{{ $page.stage.to.latTxt.replace(/ /g, '') }}</em></p>
+        <g-link class="col-2-4 col-lg-2-4" :to="previous.path" v-if="previous">← {{ previous.from.name }}</g-link>
+        <g-link class="col-6-4 col-lg-6-3" :to="next.path" v-if="next">{{ next.to.name }} →</g-link>
       </div>
     </main>
   </Layout>
@@ -48,22 +23,18 @@
   query Stage ($path: String!) {
     stage: stage (path: $path) {
       id
+      date (format: "DD.MM.YY")
       index
       title
-      distance
-      elevationGain
-      verticalDrop
-      date (format: "DD.MM.YY")
-      content
-      from { name countryISO latTxt lngTxt }
-      to { name countryISO latTxt lngTxt }
+      content 
+      to { latTxt }
     }
 
     allStage(order: ASC) {
       edges {
         node {id}
-        previous {path from { name countryISO }}
-        next {path to { name countryISO }}
+        previous {path from { name }}
+        next {path to { name }}
       }
     }
   }
@@ -71,12 +42,17 @@
 
 
 <script lang="ts">
-import { Vue, Component } from 'vue-property-decorator'
+import { Vue, Component, Watch } from 'vue-property-decorator'
 
 @Component({})
 export default class StagePage extends Vue {
   get next (): any { return (this as any).$page.allStage.edges.filter((edge: any) => edge.node.id === (this as any).$page.stage.id)[0].next }
   get previous (): any { return (this as any).$page.allStage.edges.filter((edge: any) => edge.node.id === (this as any).$page.stage.id)[0].previous }
+
+  get content (): string {
+    const regexp = /<p>(<img.*>)<\/p>/gm
+    return (this as any).$page.stage.content.replace(regexp, (match: string, offset: string) => offset)
+  }
 }
 </script>
 
@@ -84,91 +60,142 @@ export default class StagePage extends Vue {
 @import '../assets/scss/main.scss';
 
 .single-stage {
-  padding-top: y(8);
+  margin-top: y(34);
 
-  .page-nav {
-    margin-bottom: y(4);
-    
-    nav {
-      a {
-        display: block;
-        text-decoration: none;
-
-        &:nth-child(2n) {
-          text-align: right;
-        }
-      }
+    @include bp('lg') {
+      margin-top: y(36);
     }
-  }
 
+    @include bp('xl') {
+      margin-top: y(32);
+    }
+  
   .heading {
-    .info {
-      margin-top: y(.5);
-      margin-bottom: y(1);
+    margin-bottom: y(3);
 
-      @include lg {
-        margin-top: y(1);
-      }
-
-      p {
-        font-size: y(1);
-        margin: 0;
-      }
+    @include bp('lg') {
+      margin-bottom: y(8);
     }
 
-    h1 {
-      margin: 0;
-      font-size: y(2);
-
-      @include lg {
-        font-size: y(4);
-      }
+    @include bp('xl') {
+      margin-bottom: y(14);
     }
-  }
-
-  .places {
-    margin-top: y(1);
     
-    p {
+    .stage-n {
+      font-size: 15px;
+      @include lh(2);
+      margin-bottom: y(1); 
+    }
+
+    .title {
+      font-size: 38px;
+      @include lh(5);
       margin: 0;
-    }
-  }
 
-  .content {
-    margin-top: y(4);
-    
-    .main {
-      font-size: y(1);
-      line-height: y(1.1);
-
-      @include lg {
-        font-size: y(2);
-        line-height: y(2.2);
+      @include bp('lg') {
+        font-size: 68px;
+        @include lh(9)
       }
 
-      :first-child {
-        margin-top: 0;
+      @include bp('xl') {
+        font-size: 124px;
+        @include lh(17);
       }
     }
 
-    .info {
-      margin-top: y(.5);
-      margin-bottom: y(1);
-
-      p {
-        font-size: y(1);
-        margin: 0;
-      }
-    }
-
+    .prev,
     .next {
-      font-size: y(1);
-      line-height: y(1.1);
+      font-size: 24px;
+      @include lh(5);
       text-decoration: none;
+      align-self: flex-start;
 
-      @include lg {
-        font-size: y(2);
-        line-height: y(2.2);
+      @include bp('lg') {
+        font-size: 46px;
+        @include lh(8)
+      }
+
+      @include bp('xl') {
+        font-size: 100px;
+        @include lh(15);
+      }
+    }
+
+    .next { text-align: right; }
+  }
+
+  .content/deep/ {
+    p {
+      grid-column: 2 / span 8;
+      font-size: 15px;
+      @include lh(3);
+      padding-bottom: y(3);
+
+      @include bp('lg') {
+        grid-column: 3 / span 6;
+        font-size: 22px;
+        @include lh(4);
+        padding-bottom: y(4);
+      }
+
+      @include bp('xl') {
+        font-size: 40px;
+        @include lh(7);
+        padding-bottom: y(7);
+      }
+    }
+
+    img {
+      grid-column: 1 / span 9;
+      padding: y(3) 0 y(6);
+      box-sizing: content-box;
+
+      @include bp('lg') {
+        grid-column: 2 / span 8;
+        padding: y(4) 0 y(8); 
+      }
+
+      @include bp('xl') {
+        padding: y(7) 0 y(14);
+      }
+    }
+  }
+
+  .nav {
+    margin-top: y(4); 
+
+    @include bp('lg') {
+      margin-top: y(18);
+    }
+
+    @include bp('xl') {
+      margin-top: y(34);
+    }
+
+    .latitude {
+      font-size: 30px;
+      @include lh(4);
+
+      @include bp('lg') {
+        font-size: 17vw;
+        @include lh(9);
+      }
+
+      @include bp('xl') {
+        @include lh(17);
+      }
+    }
+
+    a {
+      font-size: 15px;
+      @include lh(2);
+      margin-top: y(4);
+      text-decoration: none;
+      margin-bottom: y(3);
+      justify-self: start;
+
+      @include bp('lg') {
+        margin-bottom: y(7);
       }
     }
   }
