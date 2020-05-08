@@ -23,7 +23,12 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         path: 'content/stages/**/*.md',
-        typeName: 'Stage'
+        typeName: 'Stage',
+        remark: {
+          externalLinksRel: ['noopener'],
+          slug: false,
+          imageQuality: 85,
+        }
       }
     },
     {

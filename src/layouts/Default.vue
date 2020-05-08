@@ -16,6 +16,12 @@ import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { CustomEase } from "gsap/CustomEase";
 
+// Component.registerHooks([
+//   'beforeRouteEnter',
+//   'beforeRouteLeave',
+//   'beforeRouteUpdate'
+// ])
+
 @Component({
   components: {
     Header,

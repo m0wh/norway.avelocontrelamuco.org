@@ -123,7 +123,7 @@ main {
       margin-bottom: y(22);
     }
 
-    @include bp('xl') {
+    @include bp('xxl') {
       margin-top: y(20);
       margin-bottom: y(26);
     }
