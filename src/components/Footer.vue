@@ -1,18 +1,25 @@
-
-  
-
 <template>
   <footer>
     <div class="main container">
-      <p class="copy col-1-3 col-lg-1" @click="$emit('special')">© {{ new Date().getFullYear().toString() }} À Vélo contre la Muco</p>
+      <p class="copy col-1-3 col-lg-1" @click="$emit('special')">
+        © {{ new Date().getFullYear().toString() }} À Vélo contre la Muco
+      </p>
 
       <ul class="links col-2-4 col-lg-3-2">
-        <li class="link"><a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a></li>
-        <li class="link"><a target="_blank" rel="noopener" href="mailto:avelocontrelamuco@gmail.com">Mail</a></li>
+        <li class="link">
+          <a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a>
+        </li>
+        <li class="link">
+          <a target="_blank" rel="noopener" href="mailto:avelocontrelamuco@gmail.com">Mail</a>
+        </li>
       </ul>
 
-      <button class="top col-9 col-lg-7-1" @click="scrollTop">↑</button>
-      <p class="credits col-6-4 col-lg-9">Site développé par <a target="_blank" href="https://mowh.fr/?ref=avelocontrelamuco.org">Malo Widerspach</a></p>
+      <button class="top col-9 col-lg-7-1" @click="scrollTop">
+        ↑
+      </button>
+      <p class="credits col-6-4 col-lg-9">
+        Site développé par <a target="_blank" href="https://mowh.fr/?ref=avelocontrelamuco.org">Malo Widerspach</a>
+      </p>
     </div>
     <div class="end-block" />
   </footer>
@@ -31,8 +38,6 @@ export default class Footer extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
-
 footer {
   .main {
     grid-template-rows: y(12) y(12);

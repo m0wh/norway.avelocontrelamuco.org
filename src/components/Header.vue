@@ -1,18 +1,26 @@
 <template>
   <header class="container" :class="{ open: menuOpen }">
-      <button class="open-nav col-1" @click="toggleMenu"><span>Me</span><span>nu</span></button>
+    <button class="open-nav col-1" @click="toggleMenu">
+      <span>Me</span><span>nu</span>
+    </button>
 
-      <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-5-5">
-        <g-link to="/">A Vélo<br/>contre la<br/>Muco</g-link>
-      </component>
+    <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-5-5">
+      <g-link to="/">A Vélo<br>contre la<br>Muco</g-link>
+    </component>
 
-      <nav class="col-1-9 col-xl-1-2 main-nav">
-        <ul class="nav-items container container--nopad ">
-          <li class="nav-item col-2-8"><g-link to="/stages">Étapes</g-link></li>
-          <li class="nav-item col-2-8"><g-link to="/gallery">Gallerie</g-link></li>
-          <li class="nav-item col-2-8"><a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a></li>
-        </ul>
-      </nav>
+    <nav class="col-1-9 col-xl-1-2 main-nav">
+      <ul class="nav-items container container--nopad ">
+        <li class="nav-item col-2-8">
+          <g-link to="/stages">Étapes</g-link>
+        </li>
+        <li class="nav-item col-2-8">
+          <g-link to="/gallery">Gallerie</g-link>
+        </li>
+        <li class="nav-item col-2-8">
+          <a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -39,8 +47,6 @@ export default class Header extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
-
 header {
   align-items: flex-start;
   height: y(8);
@@ -125,7 +131,7 @@ header {
 
       .nav-item {
         flex-grow: 1;
-        
+
         a {
           display: block;
           text-decoration: none;
