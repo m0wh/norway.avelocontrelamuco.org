@@ -1,7 +1,7 @@
 
 $margins: 10px;
 $gap: 10px;
-$columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+$columns: 9;
 $font-height: 0.675; // defined by font metrics
 
 @function y($i) {
@@ -37,42 +37,48 @@ $breakpoints: (
 }
 
 @mixin layout {
-  .container {
+  [class*="container"] {
     position: relative;
     margin-left: $margins;
     margin-right: $margins;
     display: grid;
-    grid-template-columns: $columns;
+    grid-template-columns: repeat(#{$columns}, 1fr);
     column-gap: $gap;
 
     &--nopad {
       margin-left: 0;
       margin-right: 0;
     }
+
+    @for $i from 1 through $columns {
+      &.conatainer-#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
   }
 
   [class*="col-"] {
-    @for $a from 1 through length($columns) {
+    @for $a from 1 through $columns {
       &.col-#{$a} { grid-column: $a; }
-      @for $b from 1 through length($columns) {
+      @for $b from 1 through $columns {
         &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
       }
     }
 
     @each $breakpoint, $value in $breakpoints {
       @include bp(#{$breakpoint}) {
-        @for $a from 1 through length($columns) {
+        @for $a from 1 through $columns {
           &.col-#{$breakpoint}-#{$a} { grid-column: $a; }
-          @for $b from 1 through length($columns) {
+          @for $b from 1 through $columns {
             &.col-#{$breakpoint}-#{$a}-#{$b} { grid-column: $a / span $b; }
           }
         }
       }
 
       @include bp-down(#{$breakpoint}) {
-        @for $a from 1 through length($columns) {
+        @for $a from 1 through $columns {
           &.col-#{$breakpoint}-down-#{$a} { grid-column: $a; }
-          @for $b from 1 through length($columns) {
+          @for $b from 1 through $columns {
             &.col-#{$breakpoint}-down-#{$a}-#{$b} { grid-column: $a / span $b; }
           }
         }

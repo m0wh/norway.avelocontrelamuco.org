@@ -17,25 +17,12 @@ module.exports = function (api) {
         lngTxt: String
       }
 
-      type Stage implements Node {
-        index: Int
-        slug: String
-        section: Int
-        title: String
-        date(format: String locale: String): Date
-        distance: Int
-        elevationGain: Int
-        verticalDrop: Int
+      type Stage implements Node @infer {
         from: Place
         to: Place
       }
     `)
   })
 
-  api.createPages(({ createPage }) => {
-    createPage({
-      path: '/section/:section',
-      component: './src/templates/Section.vue'
-    })
-  })
+  api.createPages(() => {})
 }

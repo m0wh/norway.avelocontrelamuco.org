@@ -70,8 +70,6 @@ export default class IndexPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/main.scss";
-
 main {
   margin-top: y(26);
 

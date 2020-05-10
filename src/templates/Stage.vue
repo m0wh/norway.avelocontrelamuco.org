@@ -203,6 +203,7 @@ export default class StagePage extends Vue {
 
       @include bp('xl') {
         @include lh(17);
+        margin-bottom: y(2);
       }
     }
 
