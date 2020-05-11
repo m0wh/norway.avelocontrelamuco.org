@@ -25,6 +25,12 @@ module.exports = {
           imageQuality: 85
         }
       }
+    },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: process.env.ANALYTICS_ID
+      }
     }
   ],
   templates: {
