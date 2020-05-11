@@ -72,7 +72,7 @@ export default class StagePage extends Vue {
   get previous (): any { return (this as any).$page.allStage.edges.filter((edge: any) => edge.node.id === (this as any).$page.stage.id)[0].previous }
 
   get content (): string {
-    const regexp = /<p>(<img.*>)<\/p>/gm
+    const regexp = /<p>(<img.*?>)<\/p>/gm
     return (this as any).$page.stage.content.replace(regexp, (match: string, offset: string) => offset)
   }
 }

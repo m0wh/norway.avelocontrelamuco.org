@@ -24,8 +24,8 @@
       <g-link class="more-links col-2-4 col-lg-3-3" to="/etapes">
         Toutes les étapes
       </g-link>
-      <g-link class="more-links col-6-4 col-lg-6-3" to="/gallerie">
-        Gallerie photo
+      <g-link class="more-links col-6-4 col-lg-6-3" to="/Galerie">
+        Galerie photo
       </g-link>
     </main>
   </Layout>
@@ -59,7 +59,7 @@ export default class IndexPage extends Vue {
     'Atlantique',
     'Lofoten/Vesterålen',
     'Grand Nord'
-  ];
+  ]
 
   private getSectionStages (i: number): number {
     return (this as any).$page.allStage.edges.filter(

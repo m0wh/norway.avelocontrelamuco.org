@@ -17,7 +17,7 @@
           <g-link to="/stages">Étapes</g-link>
         </li>
         <li class="nav-item col-2-8" @click="$route.path === '/gallery' && closeMenu()">
-          <g-link to="/gallery">Gallerie</g-link>
+          <g-link to="/gallery">Galerie</g-link>
         </li>
         <li class="nav-item col-2-8">
           <a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a>
@@ -118,6 +118,7 @@ header {
       width: 100%;
       z-index: 0;
       background-color: #000;
+
       &::before {
         content: '';
         position: fixed;
@@ -150,9 +151,11 @@ header {
 
     .nav-items {
       display: flex;
+      flex-wrap: wrap;
 
       .nav-item {
         flex-grow: 1;
+        margin-bottom: y(1);
 
         a {
           display: block;

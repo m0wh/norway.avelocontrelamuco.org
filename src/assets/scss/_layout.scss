@@ -37,7 +37,7 @@ $breakpoints: (
 }
 
 @mixin layout {
-  [class*="container"] {
+  .container {
     position: relative;
     margin-left: $margins;
     margin-right: $margins;
@@ -50,36 +50,61 @@ $breakpoints: (
       margin-right: 0;
     }
 
-    @for $i from 1 through $columns {
-      &.conatainer-#{$i} {
-        grid-template-columns: repeat(#{$i}, 1fr);
-      }
+    &--row-gap {
+      row-gap: $gap;
     }
   }
 
   [class*="col-"] {
     @for $a from 1 through $columns {
+      &.col-span-#{$a} { grid-column: span #{$a} }
       &.col-#{$a} { grid-column: $a; }
       @for $b from 1 through $columns {
-        &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
+        &.col-#{$a}-#{$b} {
+          grid-column: $a / span $b;
+
+          &.container {
+            margin-left: 0;
+            margin-right: 0;
+            grid-template-columns: repeat($b, 1fr);
+          }
+        }
       }
     }
 
     @each $breakpoint, $value in $breakpoints {
       @include bp(#{$breakpoint}) {
         @for $a from 1 through $columns {
+          &.col-#{$breakpoint}-span-#{$a} { grid-column: span #{$a} }
           &.col-#{$breakpoint}-#{$a} { grid-column: $a; }
           @for $b from 1 through $columns {
-            &.col-#{$breakpoint}-#{$a}-#{$b} { grid-column: $a / span $b; }
+            &.col-#{$breakpoint}-#{$a}-#{$b} {
+              grid-column: $a / span $b;
+
+              &.container {
+                margin-left: 0;
+                margin-right: 0;
+                grid-template-columns: repeat($b, 1fr);
+              }
+            }
           }
         }
       }
 
       @include bp-down(#{$breakpoint}) {
         @for $a from 1 through $columns {
+          &.col-#{$breakpoint}-down-span-#{$a} { grid-column: span #{$a} }
           &.col-#{$breakpoint}-down-#{$a} { grid-column: $a; }
           @for $b from 1 through $columns {
-            &.col-#{$breakpoint}-down-#{$a}-#{$b} { grid-column: $a / span $b; }
+            &.col-#{$breakpoint}-down-#{$a}-#{$b} {
+              grid-column: $a / span $b;
+
+              &.container {
+                margin-left: 0;
+                margin-right: 0;
+                grid-template-columns: repeat($b, 1fr);
+              }
+            }
           }
         }
       }
