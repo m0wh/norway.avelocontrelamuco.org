@@ -28,6 +28,6 @@ module.exports = {
     }
   ],
   templates: {
-    Stage: '/stages/:slug'
+    Stage: '/etapes/:slug'
   }
 }

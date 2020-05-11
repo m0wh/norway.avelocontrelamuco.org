@@ -13,11 +13,11 @@
         <li class="nav-item col-2-8" @click="$route.path === '/' && closeMenu()">
           <g-link to="/">Accueil</g-link>
         </li>
-        <li class="nav-item col-2-8" @click="$route.path === '/stages' && closeMenu()">
-          <g-link to="/stages">Étapes</g-link>
+        <li class="nav-item col-2-8" @click="$route.path === '/etapes' && closeMenu()">
+          <g-link to="/etapes">Étapes</g-link>
         </li>
-        <li class="nav-item col-2-8" @click="$route.path === '/gallery' && closeMenu()">
-          <g-link to="/gallery">Galerie</g-link>
+        <li class="nav-item col-2-8" @click="$route.path === '/galerie' && closeMenu()">
+          <g-link to="/galerie">Galerie</g-link>
         </li>
         <li class="nav-item col-2-8">
           <a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a>
