@@ -11,7 +11,7 @@
       </div>
 
       <!-- eslint-disable-next-line vue/no-v-html -->
-      <div class="content col-1-9 container" v-html="content" />
+      <div class="content container" v-html="content" />
 
       <div class="nav container">
         <p class="latitude col-2-8 col-lg-2-7">
