@@ -2,9 +2,15 @@
   <Layout :footer="false">
     <div class="not-found container">
       <p v-for="(a, n) of lines" :key="n" class="col-2-8 col-lg-3-6">
-        <component :is="a[0] ? 'span' : 'em'">4</component>
-        <component :is="a[1] ? 'span' : 'em'">0</component>
-        <component :is="a[2] ? 'span' : 'em'">4</component>
+        <component :is="a[0] ? 'span' : 'em'">
+          4
+        </component>
+        <component :is="a[1] ? 'span' : 'em'">
+          0
+        </component>
+        <component :is="a[2] ? 'span' : 'em'">
+          4
+        </component>
       </p>
     </div>
   </Layout>
@@ -16,7 +22,7 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component({})
 export default class IndexPage extends Vue {
   lines: boolean[][] = new Array(20).fill([false, false, false])
-  
+
   mounted (): void {
     this.switchFonts()
 
@@ -30,8 +36,6 @@ export default class IndexPage extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
-
 $a: 10;
 $b: 16;
 $c: 20;

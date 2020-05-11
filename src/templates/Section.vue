@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <main class="container"></main>
+    <main class="container" />
   </Layout>
 </template>
 

@@ -44,8 +44,6 @@ export default class GridHelper extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
-
 .GridHelper {
   z-index: 999999;
   pointer-events: none;

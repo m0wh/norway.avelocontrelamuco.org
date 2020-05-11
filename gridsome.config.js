@@ -4,21 +4,16 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const path = require('path')
-
-function addStyleResource (rule) {
-  rule.use('style-resource')
-    .loader('style-resources-loader')
-    .options({
-      patterns: [
-        path.resolve(__dirname, './src/assets/sass/main.scss')
-      ],
-    })
-}
-
 module.exports = {
   siteName: 'A Vélo contre la Muco',
   plugins: [
+    {
+      use: 'gridsome-plugin-typescript'
+    },
+    {
+      use: 'gridsome-plugin-sass-resources-loader',
+      options: { resources: '@/assets/scss/main.scss' }
+    },
     {
       use: '@gridsome/source-filesystem',
       options: {
@@ -27,23 +22,12 @@ module.exports = {
         remark: {
           externalLinksRel: ['noopener'],
           slug: false,
-          imageQuality: 85,
+          imageQuality: 85
         }
       }
-    },
-    {
-      use: 'gridsome-plugin-typescript'
     }
   ],
   templates: {
     Stage: '/stages/:slug'
-  },
-  chainWebpack (config) {
-    // Load variables for all vue-files
-    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
-
-    types.forEach(type => {
-      addStyleResource(config.module.rule('scss').oneOf(type))
-    })
   }
 }

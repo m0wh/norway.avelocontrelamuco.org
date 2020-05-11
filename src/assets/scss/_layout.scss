@@ -1,7 +1,7 @@
 
 $margins: 10px;
 $gap: 10px;
-$columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+$columns: 9;
 $font-height: 0.675; // defined by font metrics
 
 @function y($i) {
@@ -42,38 +42,69 @@ $breakpoints: (
     margin-left: $margins;
     margin-right: $margins;
     display: grid;
-    grid-template-columns: $columns;
+    grid-template-columns: repeat(#{$columns}, 1fr);
     column-gap: $gap;
 
     &--nopad {
       margin-left: 0;
       margin-right: 0;
     }
+
+    &--row-gap {
+      row-gap: $gap;
+    }
   }
 
   [class*="col-"] {
-    @for $a from 1 through length($columns) {
+    @for $a from 1 through $columns {
+      &.col-span-#{$a} { grid-column: span #{$a} }
       &.col-#{$a} { grid-column: $a; }
-      @for $b from 1 through length($columns) {
-        &.col-#{$a}-#{$b} { grid-column: $a / span $b; }
+      @for $b from 1 through $columns {
+        &.col-#{$a}-#{$b} {
+          grid-column: $a / span $b;
+
+          &.container {
+            margin-left: 0;
+            margin-right: 0;
+            grid-template-columns: repeat($b, 1fr);
+          }
+        }
       }
     }
 
     @each $breakpoint, $value in $breakpoints {
       @include bp(#{$breakpoint}) {
-        @for $a from 1 through length($columns) {
+        @for $a from 1 through $columns {
+          &.col-#{$breakpoint}-span-#{$a} { grid-column: span #{$a} }
           &.col-#{$breakpoint}-#{$a} { grid-column: $a; }
-          @for $b from 1 through length($columns) {
-            &.col-#{$breakpoint}-#{$a}-#{$b} { grid-column: $a / span $b; }
+          @for $b from 1 through $columns {
+            &.col-#{$breakpoint}-#{$a}-#{$b} {
+              grid-column: $a / span $b;
+
+              &.container {
+                margin-left: 0;
+                margin-right: 0;
+                grid-template-columns: repeat($b, 1fr);
+              }
+            }
           }
         }
       }
 
       @include bp-down(#{$breakpoint}) {
-        @for $a from 1 through length($columns) {
+        @for $a from 1 through $columns {
+          &.col-#{$breakpoint}-down-span-#{$a} { grid-column: span #{$a} }
           &.col-#{$breakpoint}-down-#{$a} { grid-column: $a; }
-          @for $b from 1 through length($columns) {
-            &.col-#{$breakpoint}-down-#{$a}-#{$b} { grid-column: $a / span $b; }
+          @for $b from 1 through $columns {
+            &.col-#{$breakpoint}-down-#{$a}-#{$b} {
+              grid-column: $a / span $b;
+
+              &.container {
+                margin-left: 0;
+                margin-right: 0;
+                grid-template-columns: repeat($b, 1fr);
+              }
+            }
           }
         }
       }

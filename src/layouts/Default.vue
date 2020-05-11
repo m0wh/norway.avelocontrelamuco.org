@@ -1,7 +1,7 @@
 <template>
   <div class="layout-default">
     <Header ref="header" />
-    <slot class="avclm-main"/>
+    <slot class="avclm-main" />
     <Footer v-if="footer" @special="$refs.helper.toggle()" />
     <GridHelper ref="helper" />
   </div>
@@ -14,11 +14,11 @@ import Footer from '../components/Footer.vue'
 import GridHelper from '../components/GridHelper.vue'
 import gsap from 'gsap'
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
-import { CustomEase } from "gsap/CustomEase";
+import { CustomEase } from 'gsap/CustomEase'
 
 Component.registerHooks([
   // 'beforeRouteEnter',
-  'beforeRouteLeave',
+  'beforeRouteLeave'
   // 'beforeRouteUpdate'
 ])
 
@@ -43,8 +43,6 @@ export default class DefaultLayout extends Vue {
 </script>
 
 <style lang="scss">
-@import '../assets/scss/main.scss';
-
 @include reset;
 @include layout;
 

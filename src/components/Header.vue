@@ -1,18 +1,29 @@
 <template>
   <header class="container" :class="{ open: menuOpen }">
-      <button class="open-nav col-1" @click="toggleMenu"><span>Me</span><span>nu</span></button>
+    <button class="open-nav col-1" @click="toggleMenu">
+      <span>Me</span><span>nu</span>
+    </button>
 
-      <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-5-5">
-        <g-link to="/">A Vélo<br/>contre la<br/>Muco</g-link>
-      </component>
+    <component :is="$route.path === '/' ? 'h1' : 'p'" class="logo col-5-5">
+      <g-link to="/">A Vélo<br>contre la<br>Muco</g-link>
+    </component>
 
-      <nav class="col-1-9 col-xl-1-2 main-nav">
-        <ul class="nav-items container container--nopad ">
-          <li class="nav-item col-2-8"><g-link to="/stages">Étapes</g-link></li>
-          <li class="nav-item col-2-8"><g-link to="/gallery">Gallerie</g-link></li>
-          <li class="nav-item col-2-8"><a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a></li>
-        </ul>
-      </nav>
+    <nav class="col-1-9 col-xl-1-2 main-nav">
+      <ul class="nav-items container container--nopad ">
+        <li class="nav-item col-2-8" @click="$route.path === '/' && closeMenu()">
+          <g-link to="/">Accueil</g-link>
+        </li>
+        <li class="nav-item col-2-8" @click="$route.path === '/stages' && closeMenu()">
+          <g-link to="/stages">Étapes</g-link>
+        </li>
+        <li class="nav-item col-2-8" @click="$route.path === '/gallery' && closeMenu()">
+          <g-link to="/gallery">Galerie</g-link>
+        </li>
+        <li class="nav-item col-2-8">
+          <a target="_blank" rel="noopener" href="https://facebook.com/avclm">Facebook</a>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -25,10 +36,17 @@ export default class Header extends Vue {
   private menuOpen: boolean = false
 
   mounted (): void {
-    EventBus.$on('CLOSE_NAV', () => {
-      this.menuOpen = false
-      document.body.style.overflowY = this.menuOpen ? 'hidden' : 'auto'
-    })
+    EventBus.$on('CLOSE_NAV', () => { this.closeMenu() })
+  }
+
+  private closeMenu (): void {
+    this.menuOpen = false
+    document.body.style.overflowY = this.menuOpen ? 'hidden' : 'auto'
+  }
+
+  private openMenu (): void {
+    this.menuOpen = true
+    document.body.style.overflowY = this.menuOpen ? 'hidden' : 'auto'
   }
 
   private toggleMenu (): void {
@@ -39,8 +57,6 @@ export default class Header extends Vue {
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/main.scss';
-
 header {
   align-items: flex-start;
   height: y(8);
@@ -50,6 +66,10 @@ header {
   left: 0;
   right: 0;
   z-index: 9999;
+
+  &.open {
+    color: #fff;
+  }
 }
 
 .logo {
@@ -65,6 +85,7 @@ header {
 
 .open-nav {
   text-align: left;
+  color: currentColor;
   @include lh(2);
   order: 1;
 
@@ -93,10 +114,18 @@ header {
       display: flex;
       align-items: flex-end;
       position: absolute;
-      background-color: #fff;
       height: 100vh;
       width: 100%;
       z-index: 0;
+      background-color: #000;
+
+      &::before {
+        content: '';
+        position: fixed;
+        left: 0; right: 0;
+        bottom: 0; top: 0;
+        background-color: #000;
+      }
 
       .nav-items {
         flex-grow: 1;
@@ -122,10 +151,12 @@ header {
 
     .nav-items {
       display: flex;
+      flex-wrap: wrap;
 
       .nav-item {
         flex-grow: 1;
-        
+        margin-bottom: y(1);
+
         a {
           display: block;
           text-decoration: none;

@@ -6,14 +6,23 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  api.loadSource(({ addSchemaTypes }) => {
+    addSchemaTypes(`
+      type Place {
+        name: String
+        countryISO: String
+        lat: Float
+        latTxt: String
+        lng: Float
+        lngTxt: String
+      }
+
+      type Stage implements Node @infer {
+        from: Place
+        to: Place
+      }
+    `)
   })
 
-  api.createPages(({ createPage }) => {
-    createPage({
-      path: '/section/:section',
-      component: './src/templates/Section.vue'
-    })
-  })
+  api.createPages(() => {})
 }

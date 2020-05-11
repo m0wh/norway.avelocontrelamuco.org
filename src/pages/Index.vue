@@ -1,10 +1,16 @@
 <template>
   <Layout>
     <main class="container">
-      <p class="col-2-8 col-lg-3-6">A Vélo contre la Muco est une association qui organise des voyages caritatifs à vélo en faveur de la <em>recherche contre la mucoviscidose.</em></p>
-      <g-image class="col-1-9" src="../assets/images/knivsjelodden.jpg" width="1440" alt="Knivsjelodden"/>
-      <p class="col-2-8 col-lg-3-6">En été 2018, Théotime Massot et Malo Widerspach ont entrepris un voyage mémorable : <em>de l'Aiguille du Midi au Soleil de Minuit</em>.</p>
-      <p class="col-2-8 col-lg-3-6">L'itinéraire traverse <em>cinq pays sur plus de 4900km</em>. Ce carnet de voyage se divise en six grandes parties.</p>
+      <p class="col-2-8 col-lg-3-6">
+        A Vélo contre la Muco est une association qui organise des voyages caritatifs à vélo en faveur de la <em>recherche contre la mucoviscidose.</em>
+      </p>
+      <g-image class="col-1-9" src="../assets/images/knivsjelodden.jpg" width="1440" alt="Knivsjelodden" />
+      <p class="col-2-8 col-lg-3-6">
+        En été 2018, Théotime Massot et Malo Widerspach ont entrepris un voyage mémorable : <em>de l'Aiguille du Midi au Soleil de Minuit</em>.
+      </p>
+      <p class="col-2-8 col-lg-3-6">
+        L'itinéraire traverse <em>cinq pays sur plus de 4900km</em>. Ce carnet de voyage se divise en six grandes parties.
+      </p>
 
       <ol class="chapters col-2-8 col-lg-3-7">
         <li v-for="(section, i) in sections" :key="i" class="chapter">
@@ -15,27 +21,31 @@
         </li>
       </ol>
 
-      <g-link class="more-links col-2-4 col-lg-3-3" to="/etapes">Toutes les étapes</g-link>
-      <g-link class="more-links col-6-4 col-lg-6-3" to="/gallerie">Gallerie photo</g-link>
+      <g-link class="more-links col-2-4 col-lg-3-3" to="/etapes">
+        Toutes les étapes
+      </g-link>
+      <g-link class="more-links col-6-4 col-lg-6-3" to="/Galerie">
+        Galerie photo
+      </g-link>
     </main>
   </Layout>
 </template>
 
 <page-query>
-query {
-  allStage(order: ASC) {
-    edges {
-      node {
-        section
-        path
+  query {
+    allStage(order: ASC) {
+      edges {
+        node {
+          section
+          path
+        }
       }
     }
   }
-}
 </page-query>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component } from 'vue-property-decorator'
 
 @Component({})
 export default class IndexPage extends Vue {
@@ -43,25 +53,23 @@ export default class IndexPage extends Vue {
 
   // TODO find a better way to manage sections data
   private sections: string[] = [
-    "France/Suisse",
-    "Allemagne/Danemark",
-    "Massifs Norvégiens",
-    "Atlantique",
-    "Lofoten/Vesterålen",
-    "Grand Nord"
-  ];
+    'France/Suisse',
+    'Allemagne/Danemark',
+    'Massifs Norvégiens',
+    'Atlantique',
+    'Lofoten/Vesterålen',
+    'Grand Nord'
+  ]
 
-  private getSectionStages(i: number): number {
+  private getSectionStages (i: number): number {
     return (this as any).$page.allStage.edges.filter(
       (edge: any) => edge.node.section === i
-    );
+    )
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/scss/main.scss";
-
 main {
   margin-top: y(26);
 

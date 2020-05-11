@@ -27,3 +27,11 @@ interface Stage {
   to: Place,
   content: Block[]
 }
+
+interface Image {
+  img: string,
+  stage: {
+    title: string,
+    path: string
+  }
+}

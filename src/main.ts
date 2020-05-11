@@ -1,16 +1,13 @@
-// This is the main.js file. Import global CSS and scripts here.
-// The Client API can be used here. Learn more: gridsome.org/docs/client-api
-
 import DefaultLayout from '~/layouts/Default.vue'
 import EventBus from './utils/EventBus'
 
-export default function (Vue, { router, head, isClient }) {
+export default function (Vue: any, { router, head }: any) {
   head.link.push({
     rel: 'stylesheet',
     href: '/fonts/suisse.css'
   })
 
-  router.beforeEach((to, from, next) => {
+  router.beforeEach((_to: any, _from: any, next: any) => {
     EventBus.$emit('CLOSE_NAV')
     next()
   })
