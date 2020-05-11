@@ -20,11 +20,15 @@ export default class Header extends Vue {
 .gallery-item-comp {
   a {
     .image/deep/ {
+      height: 100%;
+
       figure {
         margin: 0;
+        height: 100%;
 
         img {
           display: block;
+          height: 100%;
         }
       }
     }
